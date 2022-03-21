@@ -18,11 +18,20 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
+{
+
+    _movement.x = Input.GetAxisRaw("Horizontal");
+    _movement.y = Input.GetAxisRaw("Vertical");
+
+    if (_movement != Vector2.zero)
     {
-       _movement.x = Input.GetAxisRaw("Horizontal");
-       _movement.y = Input.GetAxisRaw("Vertical");
-    }
+         _animator.SetFloat("LastHorizontal", _movement.x);
+         _animator.SetFloat("LastVertical", _movement.y);
+     }
+
+     _animator.SetFloat("Speed", _movement.sqrMagnitude);
+}
 
     // Updated evry fixed amount of frames
     void FixedUpdate()
