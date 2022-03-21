@@ -6,7 +6,7 @@ public class SwitchCamera : MonoBehaviour
 {
     public Rigidbody2D player;
     private GameObject[] _cameras;
-    private GameObject _activeCamera;
+    public GameObject activeCamera;
     private float _roomWidth = 22;
     private float _roomHeight = 14;
 
@@ -20,12 +20,12 @@ public class SwitchCamera : MonoBehaviour
             camera.SetActive(false);
         }
 
-        if (_activeCamera == null)
+        if (activeCamera == null)
         {
-            _activeCamera = _cameras[0];
+            activeCamera = _cameras[0];
         }
 
-        _activeCamera.SetActive(true);
+        activeCamera.SetActive(true);
     }
 
     // Update is called once per frame
@@ -41,11 +41,11 @@ public class SwitchCamera : MonoBehaviour
 
             if (withinX && withinY)
             {
-                _activeCamera.SetActive(false);
-                _activeCamera = camera;
+                activeCamera.SetActive(false);
+                activeCamera = camera;
             }
         }
 
-        _activeCamera.SetActive(true);
+        activeCamera.SetActive(true);
     }
 }

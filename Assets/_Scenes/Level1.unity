@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 6581363}
   - component: {fileID: 6581368}
   - component: {fileID: 6581369}
+  - component: {fileID: 6581370}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -304,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6581364}
+  activeCamera: {fileID: 0}
 --- !u!114 &6581368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +332,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 7760925822304547408, guid: 5e7399caec13f46c89918244a16daf1e, type: 3}
+--- !u!114 &6581370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406aaf2eb74c45f4595f7aa227dca25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeProjectile: {fileID: 2929636413291127817, guid: 51fb219df599e3b47b1839e5a63cd131, type: 3}
+  projSpeed: 30
 --- !u!1 &85310629
 GameObject:
   m_ObjectHideFlags: 0
@@ -75910,7 +75926,7 @@ GameObject:
   - component: {fileID: 1475118698}
   m_Layer: 0
   m_Name: WallTilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
