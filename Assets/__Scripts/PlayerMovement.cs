@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (3 <= _dashCooldown)
             {
-                speed = 50;
+                speed = 130;
                 _dashCooldown = 0;
             }
         }
