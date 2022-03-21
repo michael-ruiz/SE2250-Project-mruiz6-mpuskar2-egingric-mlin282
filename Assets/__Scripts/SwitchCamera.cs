@@ -31,7 +31,7 @@ public class SwitchCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 playerPos = player.transform.position;
+        Vector2 playerPos = player.position;
 
         foreach (GameObject camera in _cameras)
         {
