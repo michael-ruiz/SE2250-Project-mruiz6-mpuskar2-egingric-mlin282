@@ -7,10 +7,11 @@ public class Bomb : MonoBehaviour
     private float _timer = 2;
     private bool _notExploded = true;
     public GameObject bombArea;
+    public float damage = 20;
 
     void FixedUpdate()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 2);
 
         if (_notExploded)
         {
@@ -20,9 +21,9 @@ public class Bomb : MonoBehaviour
             {
                 foreach (Collider2D c in hits)
                 {
-                    if (c.gameObject.tag == "Player")
+                    if (c.gameObject.tag == "Player" || c.gameObject.tag == "Enemy")
                     {
-                        c.GetComponent<Health>().UpdateHealth(-20);
+                        c.GetComponent<Health>().UpdateHealth(-damage);
                         _notExploded = false;
                     }
                 }
