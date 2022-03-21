@@ -18,11 +18,20 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
+{
+
+    _movement.x = Input.GetAxisRaw("Horizontal");
+    _movement.y = Input.GetAxisRaw("Vertical");
+
+    if (_movement != Vector2.zero)
     {
-       _movement.x = Input.GetAxisRaw("Horizontal");
-       _movement.y = Input.GetAxisRaw("Vertical");
-    }
+         _animator.SetFloat("LastHorizontal", _movement.x);
+         _animator.SetFloat("LastVertical", _movement.y);
+     }
+
+     _animator.SetFloat("Speed", _movement.sqrMagnitude);
+}
 
     // Updated evry fixed amount of frames
     void FixedUpdate()
@@ -43,5 +52,6 @@ public class PlayerMovement : MonoBehaviour
         _rb.MovePosition(_rb.position + (_movement * speed * Time.fixedDeltaTime));
         speed = 5;
         _dashCooldown += Time.fixedDeltaTime;
+        _rb.MovePosition(_rb.position + _movement.normalized * speed * Time.fixedDeltaTime); 
     }
 }
