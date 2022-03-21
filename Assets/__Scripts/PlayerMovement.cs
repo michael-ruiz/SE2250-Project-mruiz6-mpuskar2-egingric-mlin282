@@ -4,26 +4,44 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float speed = 5;
+    private Rigidbody2D _rb;
+    private Animator _animator;
+    private Vector2 _movement;
+    private float _dashCooldown;
 
-    public Rigidbody2D rb;
-    public Animator animator;
-
-    Vector2 movement;
+    // Get animator and rigidbody for every player
+    void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-       movement.x = Input.GetAxisRaw("Horizontal");
-       movement.y = Input.GetAxisRaw("Vertical");
-
-       animator.SetFloat("Horizontal", movement.x);
-       animator.SetFloat("Vertical", movement.y);
-       animator.SetFloat("Speed", movement.sqrMagnitude);
+       _movement.x = Input.GetAxisRaw("Horizontal");
+       _movement.y = Input.GetAxisRaw("Vertical");
     }
 
+    // Updated evry fixed amount of frames
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position+movement*moveSpeed*Time.fixedDeltaTime);
+        _animator.SetFloat("Horizontal", _movement.x);
+        _animator.SetFloat("Vertical", _movement.y);
+        _animator.SetFloat("Speed", _movement.sqrMagnitude);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (3 <= _dashCooldown)
+            {
+                speed = 50;
+                _dashCooldown = 0;
+            }
+        }
+
+        _rb.MovePosition(_rb.position + (_movement * speed * Time.fixedDeltaTime));
+        speed = 5;
+        _dashCooldown += Time.fixedDeltaTime;
     }
 }

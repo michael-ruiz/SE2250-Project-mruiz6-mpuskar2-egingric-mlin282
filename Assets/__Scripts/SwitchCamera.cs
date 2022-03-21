@@ -7,8 +7,8 @@ public class SwitchCamera : MonoBehaviour
     public Rigidbody2D player;
     private GameObject[] _cameras;
     private GameObject _activeCamera;
-    private float _roomWidth = 22f;
-    private float _roomHeight = 14f;
+    private float _roomWidth = 22;
+    private float _roomHeight = 14;
 
     // Start is called before the first frame update
     void Start()
