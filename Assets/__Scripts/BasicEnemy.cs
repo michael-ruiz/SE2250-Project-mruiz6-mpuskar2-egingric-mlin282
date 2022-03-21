@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class BasicEnemy : MonoBehaviour
 {
     public float speed = 2.5f;
-    private Transform _target;
-    private float _attackDamage = 10;
+    public float attackDamage = 10;
     private float _attackSpeed = 1;
+    private Transform _target;
     private float _attackCooldown;
 
     void FixedUpdate()
     {
-        if (_target != null)
-        {
-            float step = speed * Time.fixedDeltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, _target.position, step);
-        }
+        Move();
 
-        _attackCooldown += Time.deltaTime;
+        _attackCooldown += Time.fixedDeltaTime;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -35,9 +31,18 @@ public class Enemy : MonoBehaviour
         {
             if (_attackSpeed <= _attackCooldown)
             {
-                collision.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-_attackDamage);
+                collision.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
                 _attackCooldown = 0;
             }
+        }
+    }
+
+    protected virtual void Move()
+    {
+        if (_target != null)
+        {
+            float step = speed * Time.fixedDeltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, _target.position, step);
         }
     }
 }

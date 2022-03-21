@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
     public float maxHealth = 100;
     private float _health;
@@ -28,5 +28,11 @@ public class PlayerHealth : MonoBehaviour
             _health = 0;
             // Player dead, restart?
         }
+    }
+
+    public float health
+    {
+        get { return _health; }
+        set { _health = value; }
     }
 }
