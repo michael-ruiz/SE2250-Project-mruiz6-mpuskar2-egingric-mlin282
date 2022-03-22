@@ -44,14 +44,23 @@ public class PlayerMovement : MonoBehaviour
         {
             if (3 <= _dashCooldown)
             {
-                speed = 130;
+                speed = 50;
                 _dashCooldown = 0;
+                StartCoroutine(ExecuteAfterTime(0.1f)); // Delay of 0.1 seconds
             }
         }
 
         _rb.MovePosition(_rb.position + (_movement * speed * Time.fixedDeltaTime));
-        speed = 5;
+
         _dashCooldown += Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + _movement.normalized * speed * Time.fixedDeltaTime); 
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        speed = 5;
     }
 }
