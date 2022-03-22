@@ -61,6 +61,7 @@ public class PlayerRangedAttack : MonoBehaviour
         projGO = Instantiate(rangeProjectile);
         projGO.transform.position = transform.position;
         _rb = projGO.GetComponent<Rigidbody2D>();
+        projGO.GetComponent<Projectile>().fromWhere = gameObject;
         _rb.velocity = projDir * projSpeed;
     }
 }
