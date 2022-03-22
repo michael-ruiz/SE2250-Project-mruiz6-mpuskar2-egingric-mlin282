@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public PlayerRangedAttack PlayerRangedAttack;
     public static bool bomb;
-    public static bool shuriken;
+    public static bool shuriken = true;
 
 
     public void PlayGame()

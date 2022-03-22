@@ -16,13 +16,16 @@ public class Health : MonoBehaviour
         isAlive = true;
         _health = maxHealth;
         _healthbar = GetComponentInChildren<Slider>();
-        _healthbar.value = _health;
+        if(_healthbar != null)
+        {
+            _healthbar.value = _health;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!isAlive)
+        if (!isAlive && gameObject != null)
         {
             if (gameObject.tag == "Enemy")
             {
@@ -49,6 +52,9 @@ public class Health : MonoBehaviour
             isAlive = false;
         }
 
-        _healthbar.value = _health;
+        if (_healthbar != null)
+        {
+            _healthbar.value = _health;
+        }
     }
 }

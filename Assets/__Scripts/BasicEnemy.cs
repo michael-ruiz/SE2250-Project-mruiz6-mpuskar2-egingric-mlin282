@@ -19,7 +19,10 @@ public class BasicEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        Attack();
+        if(_target != null)
+        {
+            Attack();
+        }
 
         _attackCooldown += Time.fixedDeltaTime;
     }
