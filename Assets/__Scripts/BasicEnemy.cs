@@ -5,10 +5,10 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     public float speed = 2.5f;
-    public float attackDamage = 10;
-    private float _attackSpeed = 1;
-    private Transform _target;
-    private float _attackCooldown;
+    public float damage = 10;
+    protected float _attackSpeed = 1;
+    protected Transform _target;
+    protected float _attackCooldown;
 
     void FixedUpdate()
     {
@@ -19,22 +19,12 @@ public class BasicEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            _target = collision.transform;
-        }
+        LongRange(collision);
     }
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (_attackSpeed <= _attackCooldown)
-            {
-                collision.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
-                _attackCooldown = 0;
-            }
-        }
+        CloseRange(collision);
     }
 
     protected virtual void Move()
@@ -43,6 +33,27 @@ public class BasicEnemy : MonoBehaviour
         {
             float step = speed * Time.fixedDeltaTime;
             transform.position = Vector2.MoveTowards(transform.position, _target.position, step);
+        }
+    }
+
+    protected virtual void CloseRange(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            if (_attackSpeed <= _attackCooldown)
+            {
+                other.gameObject.GetComponent<Health>().UpdateHealth(-damage);
+                _attackCooldown = 0;
+            }
+        }
+        
+    }
+
+    protected virtual void LongRange(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _target = other.transform;
         }
     }
 }

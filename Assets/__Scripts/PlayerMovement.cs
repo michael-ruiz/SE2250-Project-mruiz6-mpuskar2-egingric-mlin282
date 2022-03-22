@@ -50,8 +50,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        _rb.MovePosition(_rb.position + (_movement * speed * Time.fixedDeltaTime));
-
         _dashCooldown += Time.fixedDeltaTime;
         _rb.MovePosition(_rb.position + _movement.normalized * speed * Time.fixedDeltaTime); 
     }

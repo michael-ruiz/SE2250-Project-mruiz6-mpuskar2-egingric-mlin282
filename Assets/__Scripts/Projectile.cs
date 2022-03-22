@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damage = 5;
+    public GameObject fromWhere;
 
     private void Update()
     {
@@ -14,7 +15,13 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && fromWhere.tag == "Player")
+        {
+            other.GetComponent<Health>().UpdateHealth(-damage);
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.tag == "Player" && fromWhere.tag == "Enemy")
         {
             other.GetComponent<Health>().UpdateHealth(-damage);
             Destroy(gameObject);
