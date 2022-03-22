@@ -9,9 +9,8 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        this.transform.Rotate(0, 0, 500 * Time.deltaTime, Space.Self);
-        // Destroy the projectile 0.7 seconds after creating it
-        StartCoroutine(ExecuteAfterTime(0.7f));
+        // Destroy the projectile 0.5 seconds after creating it
+        StartCoroutine(ExecuteAfterTime(0.5f));
     }
 
     // When it hits wall, enemy or player deal damage and destroy
@@ -35,7 +34,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    IEnumerator ExecuteAfterTime(float time)
+    protected IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
 
