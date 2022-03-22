@@ -10,6 +10,8 @@ public class SwitchCamera : MonoBehaviour
     private float _roomWidth = 22;
     private float _roomHeight = 14;
 
+    public Canvas score;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,9 @@ public class SwitchCamera : MonoBehaviour
             if (withinX && withinY)
             {
                 activeCamera.SetActive(false);
+                
                 activeCamera = camera;
+                score.transform.SetParent(activeCamera.transform);
             }
         }
 
