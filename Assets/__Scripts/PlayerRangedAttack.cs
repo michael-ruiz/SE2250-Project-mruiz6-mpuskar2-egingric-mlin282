@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRangedAttack : MonoBehaviour
 {
     public GameObject rangeProjectile;
-    public int projSpeed = 30;
+    public int projSpeed = 20;
     private Rigidbody2D _rb;
     private GameObject projGO;
 
