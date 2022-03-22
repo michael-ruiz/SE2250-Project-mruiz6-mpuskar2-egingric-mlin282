@@ -141,6 +141,8 @@ GameObject:
   - component: {fileID: 6581368}
   - component: {fileID: 6581369}
   - component: {fileID: 6581370}
+  - component: {fileID: 6581371}
+  - component: {fileID: 6581372}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -346,6 +348,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangeProjectile: {fileID: 2929636413291127817, guid: 51fb219df599e3b47b1839e5a63cd131, type: 3}
   projSpeed: 15
+--- !u!114 &6581371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1ac8bf37968534abe38f0690bc3835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startTimeBtwnAttack: 0
+  attackPos: {fileID: 0}
+  whatIsEnemies:
+    serializedVersion: 2
+    m_Bits: 0
+  attackRange: 0
+  damage: 0
+--- !u!114 &6581372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6581360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aaef3428dbd3045ba71c9227acd05b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &85310629
 GameObject:
   m_ObjectHideFlags: 0

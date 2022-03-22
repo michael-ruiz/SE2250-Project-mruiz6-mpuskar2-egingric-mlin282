@@ -33,9 +33,4 @@ public class MeleeAttack : MonoBehaviour
             timeBtwnAttack -= Time.deltaTime;
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
-    }
 }
