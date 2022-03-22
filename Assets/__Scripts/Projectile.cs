@@ -9,8 +9,9 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        // Destroy the projectile 0.5 seconds after creating it
-        StartCoroutine(ExecuteAfterTime(0.5f));
+        this.transform.Rotate(0, 0, 500 * Time.deltaTime, Space.Self);
+        // Destroy the projectile 0.7 seconds after creating it
+        StartCoroutine(ExecuteAfterTime(0.7f));
     }
 
     // When it hits wall, enemy or player deal damage and destroy
