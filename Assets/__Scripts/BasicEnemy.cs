@@ -7,53 +7,40 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 2.5f;
     public float damage = 10;
     protected float _attackSpeed = 1;
-    protected Transform _target;
+    protected GameObject _target;
     protected float _attackCooldown;
+    protected float _radius = 4;
+    protected float _attackRadius = 1;
+
+    void Start()
+    {
+        _target = GameObject.FindGameObjectWithTag("Player");
+    }
 
     void FixedUpdate()
     {
-        Move();
+        Attack();
 
         _attackCooldown += Time.fixedDeltaTime;
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void Attack()
     {
-        LongRange(collision);
-    }
+        float distanceFromTarget = Vector2.Distance(transform.position, _target.transform.position);
 
-    void OnCollisionStay2D(Collision2D collision)
-    {
-        CloseRange(collision);
-    }
-
-    protected virtual void Move()
-    {
-        if (_target != null)
+        if (distanceFromTarget < _radius)
         {
             float step = speed * Time.fixedDeltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, _target.position, step);
+            transform.position = Vector2.MoveTowards(transform.position, _target.transform.position, step);
         }
-    }
 
-    protected virtual void CloseRange(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
+        if (distanceFromTarget < _attackRadius)
         {
             if (_attackSpeed <= _attackCooldown)
             {
-                other.gameObject.GetComponent<Health>().UpdateHealth(-damage);
+                _target.GetComponent<Health>().UpdateHealth(-damage);
                 _attackCooldown = 0;
             }
-        }
-        
-    }
-
-    protected virtual void LongRange(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            _target = other.transform;
         }
     }
 }
