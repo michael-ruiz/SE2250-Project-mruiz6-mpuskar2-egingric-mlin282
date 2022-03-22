@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
         StartCoroutine(ExecuteAfterTime(0.5f));
     }
 
+    // When it hits wall, enemy or player deal damage and destroy
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy" && fromWhere.tag == "Player")
