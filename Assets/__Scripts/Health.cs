@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100;
     public bool isAlive;
-    public Text scoreText;
+    private Slider _scorebar;
     private float _health;
     private Slider _healthbar;
     private static float _score = 0;
@@ -17,11 +17,21 @@ public class Health : MonoBehaviour
     {
         isAlive = true;
         _health = maxHealth;
-        _healthbar = GetComponentInChildren<Slider>();
-        scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+        _scorebar = GameObject.FindGameObjectWithTag("Score").GetComponent<Slider>();
+
+        if (gameObject.tag == "Player")
+        {
+            _healthbar = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
+        }
+
+        if (gameObject.tag == "Enemy")
+        {
+            _healthbar = GetComponentInChildren<Slider>();
+        }
 
         if(_healthbar != null)
         {
+            _healthbar.maxValue = maxHealth;
             _healthbar.value = _health;
         }
     }
@@ -34,7 +44,7 @@ public class Health : MonoBehaviour
             if (gameObject.tag == "Enemy")
             {
                 _score += gameObject.GetComponent<BasicEnemy>().score;
-                scoreText.text = "Score: " + _score;
+                _scorebar.value += _score; 
             }
 
             Destroy(gameObject);
