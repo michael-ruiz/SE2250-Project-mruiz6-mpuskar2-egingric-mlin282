@@ -93525,6 +93525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempEnemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 5161598399361850063, guid: 73a8f21dfad355f4497d4f27903c8c80, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a8f21dfad355f4497d4f27903c8c80, type: 3}
 --- !u!1001 &8072469147148209135
@@ -93585,6 +93589,10 @@ PrefabInstance:
     - target: {fileID: 8072469146657577092, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
       propertyPath: m_Name
       value: TempEnemy2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072469146657577092, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}

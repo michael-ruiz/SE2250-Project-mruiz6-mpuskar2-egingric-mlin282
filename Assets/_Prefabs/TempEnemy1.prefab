@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5161598399361850061}
   - component: {fileID: 5161598399361850056}
   - component: {fileID: 5161598399361850060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TempEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   speed: 4
   damage: 10
   radius: 4
+  score: 5
 --- !u!114 &5161598399361850056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   isAlive: 0
+  scoreText: {fileID: 0}
 --- !u!61 &5161598399361850060
 BoxCollider2D:
   m_ObjectHideFlags: 0
