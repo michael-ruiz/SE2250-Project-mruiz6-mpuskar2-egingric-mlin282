@@ -44,7 +44,7 @@ public class Health : MonoBehaviour
             if (gameObject.tag == "Enemy")
             {
                 _score += gameObject.GetComponent<BasicEnemy>().score;
-                _scorebar.value += _score; 
+                _scorebar.value = _score; 
             }
 
             Destroy(gameObject);
