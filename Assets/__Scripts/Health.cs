@@ -47,6 +47,11 @@ public class Health : MonoBehaviour
                 _scorebar.value = _score; 
             }
 
+            if (gameObject.tag == "Player")
+            {
+                DeathMenu.OpenDeathMenu();
+            }
+
             Destroy(gameObject);
         }
     }
