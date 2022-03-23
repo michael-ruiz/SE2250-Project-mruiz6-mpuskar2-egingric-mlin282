@@ -325,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   isAlive: 0
+  scoreText: {fileID: 0}
 --- !u!114 &6581369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,7 +795,7 @@ GameObject:
   - component: {fileID: 324959853}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75517,7 +75518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -93576,6 +93577,10 @@ PrefabInstance:
     - target: {fileID: 8072469146657577088, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072469146657577091, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
+      propertyPath: score
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8072469146657577092, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
       propertyPath: m_Name

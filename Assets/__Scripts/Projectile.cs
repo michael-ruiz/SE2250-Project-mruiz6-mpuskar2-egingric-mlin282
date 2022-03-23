@@ -16,22 +16,26 @@ public class Projectile : MonoBehaviour
     // When it hits wall, enemy or player deal damage and destroy
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy" && fromWhere.tag == "Player")
+        if (other.gameObject != null && fromWhere.gameObject != null)
         {
-            other.GetComponent<Health>().UpdateHealth(-damage);
-            Destroy(gameObject);
-        }
+            if (other.gameObject.tag == "Enemy" && fromWhere.tag == "Player")
+            {
+                other.GetComponent<Health>().UpdateHealth(-damage);
+                Destroy(gameObject);
+            }
 
-        if (other.gameObject.tag == "Player" && fromWhere.tag == "Enemy")
-        {
-            other.GetComponent<Health>().UpdateHealth(-damage);
-            Destroy(gameObject);
-        }
+            if (other.gameObject.tag == "Player" && fromWhere.tag == "Enemy")
+            {
+                other.GetComponent<Health>().UpdateHealth(-damage);
+                Destroy(gameObject);
+            }
 
-        if (other.gameObject.tag == "Wall")
-        {
-            Destroy(gameObject);
+            if (other.gameObject.tag == "Wall")
+            {
+                Destroy(gameObject);
+            }
         }
+        
     }
 
     protected IEnumerator ExecuteAfterTime(float time)

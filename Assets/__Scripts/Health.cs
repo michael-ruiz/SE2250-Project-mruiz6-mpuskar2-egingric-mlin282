@@ -7,8 +7,10 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100;
     public bool isAlive;
+    public Text scoreText;
     private float _health;
     private Slider _healthbar;
+    private static float _score = 0;
 
     // Set player starting health
     void Awake()
@@ -16,6 +18,8 @@ public class Health : MonoBehaviour
         isAlive = true;
         _health = maxHealth;
         _healthbar = GetComponentInChildren<Slider>();
+        scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
+
         if(_healthbar != null)
         {
             _healthbar.value = _health;
@@ -29,7 +33,8 @@ public class Health : MonoBehaviour
         {
             if (gameObject.tag == "Enemy")
             {
-                //update score text
+                _score += gameObject.GetComponent<BasicEnemy>().score;
+                scoreText.text = "Score: " + _score;
             }
 
             Destroy(gameObject);

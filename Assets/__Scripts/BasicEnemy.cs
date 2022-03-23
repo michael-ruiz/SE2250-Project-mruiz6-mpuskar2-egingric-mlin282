@@ -7,6 +7,7 @@ public class BasicEnemy : MonoBehaviour
     public float speed = 2.5f;
     public float damage = 10;
     public float radius = 4;
+    public float score = 5;
     protected float _attackSpeed = 1;
     protected GameObject _target;
     protected float _attackCooldown;
