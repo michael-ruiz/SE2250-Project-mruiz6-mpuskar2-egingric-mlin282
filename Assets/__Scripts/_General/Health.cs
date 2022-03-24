@@ -50,6 +50,7 @@ public class Health : MonoBehaviour
             if (gameObject.tag == "Player")
             {
                 DeathMenu.OpenDeathMenu();
+                _score = 0;
             }
 
             Destroy(gameObject);
