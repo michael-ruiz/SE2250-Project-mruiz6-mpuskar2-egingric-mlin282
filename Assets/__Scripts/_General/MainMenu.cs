@@ -38,6 +38,9 @@ public class MainMenu : MonoBehaviour
         // Character 2
         knifeButton.interactable = false;
         bowButtonC2.interactable = false;
+
+        // Character 1
+        character1 = false;
     }
 
     public void Character2Select()
@@ -50,6 +53,9 @@ public class MainMenu : MonoBehaviour
         character3 = false;
         shurikenButton.interactable = false;
         bombButton.interactable = false;
+
+        // Character 1
+        character1 = false;
     }
 
     public void Character1Select()
@@ -62,6 +68,9 @@ public class MainMenu : MonoBehaviour
         character3 = false;
         shurikenButton.interactable = false;
         bombButton.interactable = false;
+
+        // Character 2
+        character2 = false;
     }
 
 
