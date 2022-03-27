@@ -9,6 +9,6 @@ public class ShurikenSpin : Projectile
     {
         this.transform.Rotate(0, 0, 500 * Time.deltaTime, Space.Self);
         // Destroy the projectile 0.7 seconds after creating it
-        StartCoroutine(base.ExecuteAfterTime(0.7f));
+        StartCoroutine(base.ExecuteAfterTime(timeToDelete));
     }
 }

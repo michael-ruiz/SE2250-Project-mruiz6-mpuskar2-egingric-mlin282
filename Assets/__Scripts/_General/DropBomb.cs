@@ -23,4 +23,14 @@ public class DropBomb : MonoBehaviour
 
         _placeCooldown += Time.fixedDeltaTime;
     }
+
+    public void EnemyDropBomb()
+    {
+        GameObject obj = Instantiate(bombPrefab);
+        obj.transform.localScale = new Vector3(2, 2, 1);
+        obj.GetComponent<Bomb>().fromWhere = gameObject;
+        obj.GetComponent<Bomb>().radius = 8;
+        obj.GetComponent<Bomb>().damage = 40;
+        obj.transform.position = transform.position;
+    }
 }

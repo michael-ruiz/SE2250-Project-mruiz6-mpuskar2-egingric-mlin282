@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  timeToDelete: 0.7
   fromWhere: {fileID: 0}
 --- !u!1 &2929636413538207865
 GameObject:

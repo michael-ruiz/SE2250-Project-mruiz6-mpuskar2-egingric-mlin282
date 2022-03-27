@@ -10,10 +10,11 @@ public class Bomb : MonoBehaviour
     public float damage = 20;
     public static float damageMultiplier = 1;
     public GameObject fromWhere;
+    public float radius = 2;
 
     void FixedUpdate()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 2);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
 
         if (_notExploded)
         {
@@ -23,12 +24,12 @@ public class Bomb : MonoBehaviour
             {
                 foreach (Collider2D c in hits)
                 {
-                    if ((c.gameObject.CompareTag("Player") || c.gameObject.CompareTag("Enemy")) && fromWhere.CompareTag("Player"))
+                    if ((c.gameObject.CompareTag("Player") || c.gameObject.CompareTag("Enemy")) && fromWhere != null)
                     {
                         c.GetComponent<Health>().UpdateHealth(-damage * damageMultiplier);
                         _notExploded = false;
                     }
-                    if ((c.gameObject.CompareTag("Player") || c.gameObject.CompareTag("Enemy")) && fromWhere.CompareTag("Enemy"))
+                    if (c.gameObject.CompareTag("Player") || c.gameObject.CompareTag("Enemy") && fromWhere == null)
                     {
                         c.GetComponent<Health>().UpdateHealth(-damage);
                         _notExploded = false;

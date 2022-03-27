@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 7760925822304547414}
   - component: {fileID: 7760925822304547409}
   m_Layer: 0
-  m_Name: PlayerBomb
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombArea: {fileID: 0}
+  damage: 20
+  fromWhere: {fileID: 0}
+  radius: 2
 --- !u!1 &7760925822614049639
 GameObject:
   m_ObjectHideFlags: 0

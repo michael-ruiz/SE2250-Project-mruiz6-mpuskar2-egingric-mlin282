@@ -6,12 +6,13 @@ public class Projectile : MonoBehaviour
 {
     public float damage = 5;
     public static float damageMultiplier = 1;
+    public float timeToDelete = 0.5f;
     public GameObject fromWhere;
 
     private void Update()
     {
         // Destroy the projectile 0.5 seconds after creating it
-        StartCoroutine(ExecuteAfterTime(0.5f));
+        StartCoroutine(ExecuteAfterTime(timeToDelete));
     }
 
     // When it hits wall, enemy or player deal damage and destroy

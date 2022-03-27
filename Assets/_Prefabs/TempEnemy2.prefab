@@ -525,10 +525,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   damage: 10
-  radius: 10
+  maxRadius: 10
+  minRadius: 0
   score: 10
   rangeProjectile: {fileID: 3292813943776123982, guid: 44357e868d8ad4aecbbdd190974c7dd5, type: 3}
   projSpeed: 25
+  targetInRange: 1
 --- !u!61 &8072469146657577119
 BoxCollider2D:
   m_ObjectHideFlags: 0

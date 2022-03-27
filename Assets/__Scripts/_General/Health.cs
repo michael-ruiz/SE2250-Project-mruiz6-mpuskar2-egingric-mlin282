@@ -44,7 +44,12 @@ public class Health : MonoBehaviour
             if (gameObject.CompareTag("Enemy"))
             {
                 _score += gameObject.GetComponent<BasicEnemy>().score;
-                _scorebar.value = _score; 
+                _scorebar.value = _score;
+
+                if (gameObject.GetComponent<DropBomb>() != null)
+                {
+                    gameObject.GetComponent<DropBomb>().EnemyDropBomb();
+                }
             }
 
             if (gameObject.CompareTag("Player"))
