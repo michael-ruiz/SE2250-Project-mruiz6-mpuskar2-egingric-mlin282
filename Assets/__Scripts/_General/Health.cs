@@ -78,4 +78,17 @@ public class Health : MonoBehaviour
             _healthbar.value = _health;
         }
     }
+
+    public void IncreaseHealth(int increase)
+    {
+        _health += increase;
+        _healthbar.value = _health;
+
+        if (_health > 100)
+        {
+            _health = 100;
+            _healthbar.value = 100;
+        }
+        
+    }
 }

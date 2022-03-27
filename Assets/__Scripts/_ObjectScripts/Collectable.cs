@@ -5,6 +5,10 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     public static int objCounter = 0;
+    // How much to mutiply the player's speed by if it is a speed pickup
+    public float speedMultiplier = 1.5f;
+    // How much to increase the player's health by if it is a health pickup
+    public int healthIncrease = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,15 @@ public class Collectable : MonoBehaviour
         {
             Destroy(gameObject);
             objCounter++;
+
+            if (gameObject.tag == "SpeedPickup")
+            {
+                PlayerMovement.speedMultiplier = speedMultiplier;
+            }
+            else if (gameObject.tag == "HealthPickup")
+            {
+                collision.GetComponent<Health>().IncreaseHealth(healthIncrease);
+            }
         }
     }
 }

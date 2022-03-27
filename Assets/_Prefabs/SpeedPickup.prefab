@@ -420,10 +420,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5327535072034663731}
   - component: {fileID: 5327535072034663730}
-  - component: {fileID: 5327535072034663725}
+  - component: {fileID: -4522666910356820651}
   m_Layer: 0
   m_Name: SpeedPickup
-  m_TagString: Untagged
+  m_TagString: SpeedPickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,7 +463,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &5327535072034663725
+--- !u!114 &-4522666910356820651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -472,7 +472,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5327535072034663728}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ee0c3de4b934846bb87e2c432b53ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 20ed778fb0cf14da49aaa4be0db75222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 1.5
+  healthIncrease: 20
