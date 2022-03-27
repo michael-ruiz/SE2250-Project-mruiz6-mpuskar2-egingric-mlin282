@@ -30,7 +30,7 @@ public class Collectable : MonoBehaviour
             }
             else if (gameObject.tag == "HealthPickup")
             {
-                collision.GetComponent<Health>().IncreaseHealth(healthIncrease);
+                collision.GetComponent<Health>().UpdateHealth(healthIncrease);
             }
         }
     }
