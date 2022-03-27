@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damage = 5;
+    public static float damageMultiplier = 1;
     public GameObject fromWhere;
 
     private void Update()
@@ -18,19 +19,19 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject != null && fromWhere.gameObject != null)
         {
-            if (other.gameObject.tag == "Enemy" && fromWhere.tag == "Player")
+            if (other.gameObject.CompareTag("Enemy") && fromWhere.CompareTag("Player"))
+            {
+                other.GetComponent<Health>().UpdateHealth(-damage * damageMultiplier);
+                Destroy(gameObject);
+            }
+
+            if (other.gameObject.CompareTag("Player") && fromWhere.CompareTag("Enemy"))
             {
                 other.GetComponent<Health>().UpdateHealth(-damage);
                 Destroy(gameObject);
             }
 
-            if (other.gameObject.tag == "Player" && fromWhere.tag == "Enemy")
-            {
-                other.GetComponent<Health>().UpdateHealth(-damage);
-                Destroy(gameObject);
-            }
-
-            if (other.gameObject.tag == "Wall")
+            if (other.gameObject.CompareTag("Wall"))
             {
                 Destroy(gameObject);
             }

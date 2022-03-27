@@ -8,6 +8,8 @@ public class Bomb : MonoBehaviour
     private bool _notExploded = true;
     public GameObject bombArea;
     public float damage = 20;
+    public static float damageMultiplier = 1;
+    public GameObject fromWhere;
 
     void FixedUpdate()
     {
@@ -21,7 +23,12 @@ public class Bomb : MonoBehaviour
             {
                 foreach (Collider2D c in hits)
                 {
-                    if (c.gameObject.tag == "Player" || c.gameObject.tag == "Enemy")
+                    if ((c.gameObject.CompareTag("Player") || c.gameObject.CompareTag("Enemy")) && fromWhere.CompareTag("Player"))
+                    {
+                        c.GetComponent<Health>().UpdateHealth(-damage * damageMultiplier);
+                        _notExploded = false;
+                    }
+                    if ((c.gameObject.CompareTag("Player") || c.gameObject.CompareTag("Enemy")) && fromWhere.CompareTag("Enemy"))
                     {
                         c.GetComponent<Health>().UpdateHealth(-damage);
                         _notExploded = false;

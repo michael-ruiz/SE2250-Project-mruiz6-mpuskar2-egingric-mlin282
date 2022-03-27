@@ -15,6 +15,7 @@ public class DropBomb : MonoBehaviour
             if (_placeSpeed <= _placeCooldown)
             {
                 GameObject obj = Instantiate(bombPrefab);
+                obj.GetComponent<Bomb>().fromWhere = gameObject;
                 obj.transform.position = transform.position;
                 _placeCooldown = 0;
             }

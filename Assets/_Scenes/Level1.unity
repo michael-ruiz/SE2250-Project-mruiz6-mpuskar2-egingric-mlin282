@@ -369,6 +369,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackRange: 1.5
+  baseDamage: 20
   damage: 20
 --- !u!114 &6581372
 MonoBehaviour:
@@ -76065,7 +76066,7 @@ Transform:
   - {fileID: 1475118695}
   - {fileID: 1960917336}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &735932455
 GameObject:
@@ -77120,7 +77121,7 @@ Transform:
   - {fileID: 272304841}
   - {fileID: 1370968778}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444568507
 GameObject:
@@ -95069,7 +95070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5161598399361850059, guid: 73a8f21dfad355f4497d4f27903c8c80, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5161598399361850059, guid: 73a8f21dfad355f4497d4f27903c8c80, type: 3}
       propertyPath: m_LocalPosition.x
@@ -95138,7 +95139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8072469146657577088, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8072469146657577088, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
       propertyPath: m_LocalPosition.x

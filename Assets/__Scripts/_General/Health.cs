@@ -19,12 +19,12 @@ public class Health : MonoBehaviour
         _health = maxHealth;
         _scorebar = GameObject.FindGameObjectWithTag("Score").GetComponent<Slider>();
 
-        if (gameObject.tag == "Player")
+        if (gameObject.CompareTag("Player"))
         {
             _healthbar = GameObject.FindGameObjectWithTag("PlayerHealth").GetComponent<Slider>();
         }
 
-        if (gameObject.tag == "Enemy")
+        if (gameObject.CompareTag("Enemy"))
         {
             _healthbar = GetComponentInChildren<Slider>();
         }
@@ -41,13 +41,13 @@ public class Health : MonoBehaviour
     {
         if (!isAlive && gameObject != null)
         {
-            if (gameObject.tag == "Enemy")
+            if (gameObject.CompareTag("Enemy"))
             {
                 _score += gameObject.GetComponent<BasicEnemy>().score;
                 _scorebar.value = _score; 
             }
 
-            if (gameObject.tag == "Player")
+            if (gameObject.CompareTag("Player"))
             {
                 DeathMenu.OpenDeathMenu();
                 _score = 0;

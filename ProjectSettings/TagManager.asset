@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Score
   - PlayerHealth
+  - HealthPickup
+  - SpeedPickup
+  - DamagePickup
   layers:
   - Default
   - TransparentFX

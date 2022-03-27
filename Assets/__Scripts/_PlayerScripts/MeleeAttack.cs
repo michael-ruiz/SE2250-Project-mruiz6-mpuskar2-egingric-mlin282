@@ -10,7 +10,13 @@ public class MeleeAttack : MonoBehaviour
     public Transform attackPos;
     public LayerMask whatIsEnemies;
     public float attackRange;
+    public float baseDamage = 20;
     public float damage;
+
+    void Start()
+    {
+        damage = baseDamage;
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,10 +38,26 @@ public class MeleeAttack : MonoBehaviour
         {
             timeBtwnAttack -= Time.deltaTime;
         }
+
+        if (damage != baseDamage)
+        {
+            // Reset all player done damage values after 10 seconds
+            StartCoroutine(ResetDamageDelay(10));
+        }
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position,attackRange);
+    }
+
+    IEnumerator ResetDamageDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        damage = baseDamage;
+        Projectile.damageMultiplier = 1;
+        Bomb.damageMultiplier = 1;
     }
 }
