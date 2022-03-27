@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5;
+    public static float speedMultiplier = 1;
     private Rigidbody2D _rb;
     private Animator _animator;
     private Vector2 _movement;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        speedMultiplier = 1;
     }
 
     // Update is called once per frame
@@ -50,8 +52,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Check if the multiplier is greater than 1, and if it is reset it after 5 seconds
+        if (speedMultiplier > 1)
+        {
+            StartCoroutine(ResetMultiplierDelay(5));
+        }
+
         _dashCooldown += Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + _movement.normalized * speed * Time.fixedDeltaTime); 
+        _rb.MovePosition(_rb.position + _movement.normalized * speed * speedMultiplier * Time.fixedDeltaTime); 
     }
 
     IEnumerator ExecuteAfterTime(float time)
@@ -60,5 +68,13 @@ public class PlayerMovement : MonoBehaviour
 
         // Code to execute after the delay
         speed = 5;
+    }
+
+    IEnumerator ResetMultiplierDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        speedMultiplier = 1;
     }
 }
