@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  timeToDelete: 0.5
+  timeToDelete: 0.7
   fromWhere: {fileID: 0}
 --- !u!50 &-603537035274065457
 Rigidbody2D:

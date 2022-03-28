@@ -75806,6 +75806,7 @@ MonoBehaviour:
   character3: {fileID: 519279998046998789, guid: d667f2494d358d648855a65e1c2a67ef, type: 3}
   character2: {fileID: 6199715169105111962, guid: 739eff2406247594bb22f529fd235bd9, type: 3}
   character1: {fileID: 0}
+  vaultWallTemp: {fileID: 1960917339}
 --- !u!1 &735932455
 GameObject:
   m_ObjectHideFlags: 0
@@ -93942,6 +93943,7 @@ GameObject:
   - component: {fileID: 1960917336}
   - component: {fileID: 1960917338}
   - component: {fileID: 1960917337}
+  - component: {fileID: 1960917339}
   m_Layer: 0
   m_Name: VaultableWallTilemap
   m_TagString: Untagged
@@ -94429,6 +94431,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1960917339
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960917335}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &1963690505
 GameObject:
   m_ObjectHideFlags: 0
