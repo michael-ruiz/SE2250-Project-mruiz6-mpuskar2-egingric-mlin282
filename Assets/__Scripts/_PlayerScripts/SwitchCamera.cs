@@ -5,7 +5,7 @@ using UnityEngine;
 public class SwitchCamera : MonoBehaviour
 {
     public GameObject activeCamera;
-    public Canvas score;
+    private Canvas _score;
     private Rigidbody2D _player;
     private GameObject[] _cameras;
     private float _roomWidth = 22;
@@ -16,6 +16,7 @@ public class SwitchCamera : MonoBehaviour
     {
         _cameras = GameObject.FindGameObjectsWithTag("Camera");
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        _score = GameObject.FindGameObjectWithTag("UI").GetComponent<Canvas>();
 
         foreach (GameObject camera in _cameras)
         {
@@ -33,23 +34,26 @@ public class SwitchCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 playerPos = _player.position;
-
-        foreach (GameObject camera in _cameras)
+        if (_player != null)
         {
-            Vector2 cameraPos = camera.transform.position;
-            bool withinX = playerPos.x > cameraPos.x - _roomWidth / 2 && playerPos.x <= cameraPos.x + _roomWidth / 2;
-            bool withinY = playerPos.y > cameraPos.y - _roomHeight / 2 && playerPos.y <= cameraPos.y + _roomHeight / 2;
+            Vector2 playerPos = _player.position;
 
-            if (withinX && withinY)
+            foreach (GameObject camera in _cameras)
             {
-                activeCamera.SetActive(false);
-                
-                activeCamera = camera;
-                score.transform.SetParent(activeCamera.transform);
-            }
-        }
+                Vector2 cameraPos = camera.transform.position;
+                bool withinX = playerPos.x > cameraPos.x - _roomWidth / 2 && playerPos.x <= cameraPos.x + _roomWidth / 2;
+                bool withinY = playerPos.y > cameraPos.y - _roomHeight / 2 && playerPos.y <= cameraPos.y + _roomHeight / 2;
 
-        activeCamera.SetActive(true);
+                if (withinX && withinY)
+                {
+                    activeCamera.SetActive(false);
+
+                    activeCamera = camera;
+                    _score.transform.SetParent(activeCamera.transform);
+                }
+            }
+
+            activeCamera.SetActive(true);
+        }
     }
 }

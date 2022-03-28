@@ -12,6 +12,7 @@ TagManager:
   - HealthPickup
   - SpeedPickup
   - DamagePickup
+  - UI
   layers:
   - Default
   - TransparentFX
