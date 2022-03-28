@@ -9,12 +9,6 @@ public class PlayerRangedAttack : MonoBehaviour
     private Rigidbody2D _rb;
     private GameObject projGO;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -22,26 +16,6 @@ public class PlayerRangedAttack : MonoBehaviour
         {
             Shoot();
         }
-
-        // Left click
-        /*        if (Input.GetMouseButtonDown(0))
-                {
-                    Debug.Log(mousePos.x);
-                    Debug.Log(mousePos.y);
-                    Debug.Log("Pressed primary button.");
-                }
-
-                // Right click
-                if (Input.GetMouseButtonDown(1))
-                {
-                    Debug.Log("Pressed secondary button.");
-                }
-
-
-                if (Input.GetMouseButtonDown(2))
-                {
-                    Debug.Log("Pressed middle click.");
-                }*/
     }
 
     void Shoot()
