@@ -10,7 +10,7 @@ public class SwitchCamera : MonoBehaviour
     private GameObject[] _cameras;
     private List<GameObject> _visitedRooms = new List<GameObject>();
     private float _roomWidth = 22;
-    private float _roomHeight = 14;
+    private float _roomHeight = 12;
 
     // Start is called before the first frame update
     void Start()
