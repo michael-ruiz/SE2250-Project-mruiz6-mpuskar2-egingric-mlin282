@@ -11,28 +11,20 @@ public class InstantiatePlayer : MonoBehaviour
     public GameObject character1;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        // Depending on the choosen character, the others are destroyed (All characters are in hierarchy at start and the unused are deleted)
-        // Most code is commented because other characters don't exist yet
-        // Doing it this way because other way didn't want to work :)
+        // Instantiate the selected character
         if (MainMenu.character3)
         {
-            //Instantiate(character3);
-            //Destroy(character2);
-            //Destroy(character1);
+            Instantiate(character3);
         }
         else if (MainMenu.character2)
         {
-            //Instantiate(character2);
-            Destroy(character3);
-            //Destroy(character1);
+            Instantiate(character2);
         }
         else if (MainMenu.character1)
         {
             //Instantiate(character1);
-            Destroy(character3);
-            //Destroy(character2);
         }
     }
 
