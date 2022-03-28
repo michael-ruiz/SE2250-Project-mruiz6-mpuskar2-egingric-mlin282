@@ -8,6 +8,7 @@ public class SwitchCamera : MonoBehaviour
     private Canvas _score;
     private Rigidbody2D _player;
     private GameObject[] _cameras;
+    private List<GameObject> _visitedRooms = new List<GameObject>();
     private float _roomWidth = 22;
     private float _roomHeight = 14;
 
@@ -26,6 +27,7 @@ public class SwitchCamera : MonoBehaviour
         if (activeCamera == null)
         {
             activeCamera = _cameras[0];
+            _visitedRooms.Add(activeCamera);
         }
 
         activeCamera.SetActive(true);
@@ -54,6 +56,11 @@ public class SwitchCamera : MonoBehaviour
             }
 
             activeCamera.SetActive(true);
+            if (!_visitedRooms.Contains(activeCamera))
+            {
+                InstantiateEnemies.GenerateRoom(1);
+                _visitedRooms.Add(activeCamera);
+            }
         }
     }
 }
