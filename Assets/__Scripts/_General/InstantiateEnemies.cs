@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InstantiateEnemies : MonoBehaviour
 {
+    
     public GameObject enemy1Prefab;
     public GameObject enemy2Prefab;
     public GameObject enemy3Prefab;
@@ -15,16 +16,23 @@ public class InstantiateEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _posInRoom = new Vector3[5];
-        _posInRoom[0] = new Vector3(6.5f, 3, 0);
-        _posInRoom[1] = new Vector3(-6.5f, 3, 0);
-        _posInRoom[2] = new Vector3(6.5f, -3, 0);
-        _posInRoom[3] = new Vector3(-6.5f, -3, 0);
-        _posInRoom[4] = new Vector3(0, 0, 0);
+        if (MainMenu.currentLvl == 1)
+        {
+            _posInRoom = new Vector3[5];
+            _posInRoom[0] = new Vector3(6.5f, 3, 0);
+            _posInRoom[1] = new Vector3(-6.5f, 3, 0);
+            _posInRoom[2] = new Vector3(6.5f, -3, 0);
+            _posInRoom[3] = new Vector3(-6.5f, -3, 0);
+            _posInRoom[4] = new Vector3(0, 0, 0);
 
-        enemy1 = enemy1Prefab;
-        enemy2 = enemy2Prefab;
-        enemy3 = enemy3Prefab;
+            enemy1 = enemy1Prefab;
+            enemy2 = enemy2Prefab;
+        }
+
+        if (MainMenu.currentLvl == 2)
+        {
+            // different locations for lvl 2
+        }
     }
 
     public static void GenerateRoom(int lvl)
