@@ -6,16 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5;
     public static float speedMultiplier = 1;
-    private Rigidbody2D _rb;
-    private Animator _animator;
-    private Vector2 _movement;
-    private float _dashCooldown;
+    protected Rigidbody2D rb;
+    protected Animator animator;
+    protected Vector2 movement;
+    protected float dashCooldown;
 
     // Get animator and rigidbody for every player
     void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         speedMultiplier = 1;
     }
 
@@ -23,31 +23,31 @@ public class PlayerMovement : MonoBehaviour
    void Update()
 {
 
-    _movement.x = Input.GetAxisRaw("Horizontal");
-    _movement.y = Input.GetAxisRaw("Vertical");
+    movement.x = Input.GetAxisRaw("Horizontal");
+    movement.y = Input.GetAxisRaw("Vertical");
 
-    if (_movement != Vector2.zero)
+    if (movement != Vector2.zero)
     {
-         _animator.SetFloat("LastHorizontal", _movement.x);
-         _animator.SetFloat("LastVertical", _movement.y);
+         animator.SetFloat("LastHorizontal", movement.x);
+         animator.SetFloat("LastVertical", movement.y);
      }
 
-     _animator.SetFloat("Speed", _movement.sqrMagnitude);
+     animator.SetFloat("Speed", movement.sqrMagnitude);
 }
 
     // Updated every fixed amount of frames
     void FixedUpdate()
     {
-        _animator.SetFloat("Horizontal", _movement.x);
-        _animator.SetFloat("Vertical", _movement.y);
-        _animator.SetFloat("Speed", _movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if (3 <= _dashCooldown)
+            if (3 <= dashCooldown)
             {
                 speed = 50;
-                _dashCooldown = 0;
+                dashCooldown = 0;
                 StartCoroutine(ExecuteAfterTime(0.1f)); // Delay of 0.1 seconds
             }
         }
@@ -58,11 +58,11 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(ResetMultiplierDelay(5));
         }
 
-        _dashCooldown += Time.fixedDeltaTime;
-        _rb.MovePosition(_rb.position + _movement.normalized * speed * speedMultiplier * Time.fixedDeltaTime); 
+        dashCooldown += Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + speed * speedMultiplier * Time.fixedDeltaTime * movement.normalized); 
     }
 
-    IEnumerator ExecuteAfterTime(float time)
+    protected IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
 
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         speed = 5;
     }
 
-    IEnumerator ResetMultiplierDelay(float time)
+    protected IEnumerator ResetMultiplierDelay(float time)
     {
         yield return new WaitForSeconds(time);
 

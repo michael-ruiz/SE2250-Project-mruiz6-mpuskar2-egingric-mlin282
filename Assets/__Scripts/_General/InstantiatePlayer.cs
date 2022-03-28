@@ -16,24 +16,23 @@ public class InstantiatePlayer : MonoBehaviour
         // Instantiate the selected character
         if (MainMenu.character3)
         {
-            Instantiate(character3);
-            character3.GetComponent<PlayerRangedAttack>().enabled = MainMenu.shuriken;
-            character3.GetComponent<DropBomb>().enabled = MainMenu.bomb;
+            GameObject char3 = Instantiate(character3);
+            char3.GetComponent<PlayerRangedAttack>().enabled = MainMenu.shuriken;
+            char3.GetComponent<DropBomb>().enabled = MainMenu.bomb;
         }
         else if (MainMenu.character2)
         {
-            Instantiate(character2);
+            GameObject char2 = Instantiate(character2);
             if (MainMenu.knife)
             {
-                // This does not work btw
-                character2.GetComponent<MeleeAttack>().baseDamage *= 2;
-                //this.GetComponent<MeleeAttack>().startTimeBtwnAttack *= 0.5f;
+                char2.GetComponent<MeleeAttack>().baseDamage *= 2;
+                char2.GetComponent<MeleeAttack>().startTimeBtwnAttack *= 0.5f;
             }
-            character2.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bow;
+            char2.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bow;
         }
         else if (MainMenu.character1)
         {
-            //Instantiate(character1);
+            //GameObject char1 = Instantiate(character1);
         }
     }
 }

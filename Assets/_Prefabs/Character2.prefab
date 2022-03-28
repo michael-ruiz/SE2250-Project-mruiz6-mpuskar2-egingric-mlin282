@@ -43,10 +43,11 @@ GameObject:
   - component: {fileID: 6199715169105111954}
   - component: {fileID: 6199715169105111955}
   - component: {fileID: 6199715169105111952}
-  - component: {fileID: 6199715169105111953}
   - component: {fileID: 6199715169105111958}
   - component: {fileID: 6199715169105111959}
   - component: {fileID: 6199715169105111956}
+  - component: {fileID: -3780836323896481573}
+  - component: {fileID: -2461464294150267130}
   m_Layer: 0
   m_Name: Character2
   m_TagString: Player
@@ -186,19 +187,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6199715169105111953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6199715169105111962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77a645393109ab648be43cd395e6deaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &6199715169105111958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,3 +235,29 @@ MonoBehaviour:
   attackRange: 1.5
   baseDamage: 20
   damage: 20
+  secondKnife: 1
+--- !u!114 &-3780836323896481573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199715169105111962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da7e94068cf86042a958f48818e1997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &-2461464294150267130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199715169105111962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf5394a19300e24986147aad3833ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
