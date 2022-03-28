@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class SwitchCamera : MonoBehaviour
 {
-    public Rigidbody2D player;
-    private GameObject[] _cameras;
     public GameObject activeCamera;
+    public Canvas score;
+    private Rigidbody2D _player;
+    private GameObject[] _cameras;
     private float _roomWidth = 22;
     private float _roomHeight = 14;
-
-    public Canvas score;
 
     // Start is called before the first frame update
     void Start()
     {
         _cameras = GameObject.FindGameObjectsWithTag("Camera");
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
 
         foreach (GameObject camera in _cameras)
         {
@@ -33,7 +33,7 @@ public class SwitchCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 playerPos = player.position;
+        Vector2 playerPos = _player.position;
 
         foreach (GameObject camera in _cameras)
         {
