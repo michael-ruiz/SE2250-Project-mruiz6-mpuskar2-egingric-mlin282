@@ -25,7 +25,6 @@ public class InstantiatePlayer : MonoBehaviour
             GameObject char2 = Instantiate(character2);
             if (MainMenu.knife)
             {
-                char2.GetComponent<MeleeAttack>().baseDamage *= 2;
                 char2.GetComponent<MeleeAttack>().startTimeBtwnAttack *= 0.5f;
             }
             char2.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bow;
