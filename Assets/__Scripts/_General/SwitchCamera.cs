@@ -30,10 +30,9 @@ public class SwitchCamera : MonoBehaviour
         }
 
         _visitedRooms.Add(activeCamera);
-        _visitedRooms.Add(GameObject.Find("Camera13"));
-        _visitedRooms.Add(GameObject.Find("Camera14"));
-        _visitedRooms.Add(GameObject.Find("Camera21"));
-        _visitedRooms.Add(GameObject.Find("CameraEnd"));
+        _visitedRooms.Add(_cameras[12]);
+        _visitedRooms.Add(_cameras[13]);
+        _visitedRooms.Add(_cameras[20]);
 
         activeCamera.SetActive(true);
     }
