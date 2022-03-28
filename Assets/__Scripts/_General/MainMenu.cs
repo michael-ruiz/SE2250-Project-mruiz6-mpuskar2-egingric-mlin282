@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     // Variables to disable or enable certain player attributes
+    // Character 3
     public static bool bomb;
     public static bool shuriken = true;
+    // Character 2
+    public static bool knife;
+    public static bool bow = true;
 
     // Variables to select the character
     public static bool character3;
@@ -18,6 +22,7 @@ public class MainMenu : MonoBehaviour
     // Main Menu buttons
     public Button shurikenButton;
     public Button bombButton;
+
     public Button knifeButton;
     public Button bowButtonC2;
 
@@ -85,6 +90,18 @@ public class MainMenu : MonoBehaviour
     {
         bomb = false;
         shuriken = true;
+    }
+
+    public void KnifeSelect()
+    {
+        knife = true;
+        bow = false;
+    }
+
+    public void BowSelect()
+    {
+        knife = false;
+        bow = true;
     }
 
     public void PlayGame()

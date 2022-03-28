@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
      _animator.SetFloat("Speed", _movement.sqrMagnitude);
 }
 
-    // Updated evry fixed amount of frames
+    // Updated every fixed amount of frames
     void FixedUpdate()
     {
         _animator.SetFloat("Horizontal", _movement.x);

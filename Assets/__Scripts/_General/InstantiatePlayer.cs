@@ -17,20 +17,23 @@ public class InstantiatePlayer : MonoBehaviour
         if (MainMenu.character3)
         {
             Instantiate(character3);
+            character3.GetComponent<PlayerRangedAttack>().enabled = MainMenu.shuriken;
+            character3.GetComponent<DropBomb>().enabled = MainMenu.bomb;
         }
         else if (MainMenu.character2)
         {
             Instantiate(character2);
+            if (MainMenu.knife)
+            {
+                // This does not work btw
+                character2.GetComponent<MeleeAttack>().baseDamage *= 2;
+                //this.GetComponent<MeleeAttack>().startTimeBtwnAttack *= 0.5f;
+            }
+            character2.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bow;
         }
         else if (MainMenu.character1)
         {
             //Instantiate(character1);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
