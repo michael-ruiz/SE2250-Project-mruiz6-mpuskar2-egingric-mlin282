@@ -511,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   isAlive: 0
+  healthDrop: {fileID: 9126325516841483109, guid: 280349993b9ef204dbb0a8923276f2bc, type: 3}
 --- !u!114 &8072469146657577091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,9 +529,9 @@ MonoBehaviour:
   maxRadius: 10
   minRadius: 0
   score: 10
+  attackSpeed: 1
   rangeProjectile: {fileID: 3292813943776123982, guid: 44357e868d8ad4aecbbdd190974c7dd5, type: 3}
   projSpeed: 25
-  targetInRange: 1
 --- !u!61 &8072469146657577119
 BoxCollider2D:
   m_ObjectHideFlags: 0

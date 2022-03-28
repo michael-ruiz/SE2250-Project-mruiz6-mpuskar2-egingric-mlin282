@@ -376,8 +376,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   damage: 10
-  radius: 4
+  maxRadius: 4
+  minRadius: 0
   score: 5
+  attackSpeed: 1
 --- !u!114 &5161598399361850056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   isAlive: 0
+  healthDrop: {fileID: 9126325516841483109, guid: 280349993b9ef204dbb0a8923276f2bc, type: 3}
 --- !u!61 &5161598399361850060
 BoxCollider2D:
   m_ObjectHideFlags: 0
