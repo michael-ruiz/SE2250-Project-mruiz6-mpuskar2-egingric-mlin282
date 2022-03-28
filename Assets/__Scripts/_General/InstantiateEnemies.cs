@@ -39,24 +39,30 @@ public class InstantiateEnemies : MonoBehaviour
             range = 4;
         }
 
-        for (int i = 0; i < _posInRoom.Length; i++)
+        if (_posInRoom != null)
         {
-            int objNum = Random.Range(0, range);
-            Vector3 pos = SwitchCamera.activeCamera.transform.position + _posInRoom[i];
-
-            switch (objNum)
+            for (int i = 0; i < _posInRoom.Length; i++)
             {
-                case 0: PlaceObject(enemy1, pos);
-                    break;
+                int objNum = Random.Range(0, range);
+                Vector3 pos = SwitchCamera.activeCamera.transform.position + _posInRoom[i];
 
-                case 1: PlaceObject(enemy2, pos);
-                    break;
+                switch (objNum)
+                {
+                    case 0:
+                        PlaceObject(enemy1, pos);
+                        break;
 
-                case 3: PlaceObject(enemy3, pos);
-                    break;
+                    case 1:
+                        PlaceObject(enemy2, pos);
+                        break;
 
-                default: // Do nothing
-                    break;
+                    case 3:
+                        PlaceObject(enemy3, pos);
+                        break;
+
+                    default: // Do nothing
+                        break;
+                }
             }
         }
     }
