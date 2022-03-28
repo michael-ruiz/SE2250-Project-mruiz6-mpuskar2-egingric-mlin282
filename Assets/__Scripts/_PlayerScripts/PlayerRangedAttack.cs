@@ -50,8 +50,7 @@ public class PlayerRangedAttack : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
 
         // Get player position relative to screen
-        SwitchCamera switchCam = GameObject.Find("Camera1").GetComponent<SwitchCamera>();
-        Camera activeCam = switchCam.activeCamera.GetComponent<Camera>();
+        Camera activeCam = SwitchCamera.activeCamera.GetComponent<Camera>();
         Vector3 screenPos = activeCam.WorldToScreenPoint(transform.position);
 
         // Make unit vector for projectile direction

@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 6581364}
   - component: {fileID: 6581362}
   - component: {fileID: 6581361}
-  - component: {fileID: 6581367}
   - component: {fileID: 6581363}
   - component: {fileID: 6581368}
   - component: {fileID: 6581369}
@@ -295,19 +294,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6581367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6581360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7de331396cf4e03bb863a4b363b1fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeCamera: {fileID: 0}
 --- !u!114 &6581368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,7 +1221,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Camera1
   m_TagString: Camera
@@ -1338,19 +1323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy1: {fileID: 5161598399361850063, guid: 73a8f21dfad355f4497d4f27903c8c80, type: 3}
   enemy2: {fileID: 8072469146657577092, guid: 22e11d8042ec5784f89cf6a0c6c77c73, type: 3}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db7de331396cf4e03bb863a4b363b1fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeCamera: {fileID: 0}
 --- !u!1 &558892851
 GameObject:
   m_ObjectHideFlags: 0
@@ -76059,6 +76031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 699338727}
   - component: {fileID: 699338726}
+  - component: {fileID: 699338728}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -76095,6 +76068,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699338728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699338725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7de331396cf4e03bb863a4b363b1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeCamera: {fileID: 0}
 --- !u!1 &735932455
 GameObject:
   m_ObjectHideFlags: 0

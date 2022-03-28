@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchCamera : MonoBehaviour
 {
-    public GameObject activeCamera;
+    public static GameObject activeCamera;
     private Canvas _score;
     private Rigidbody2D _player;
     private GameObject[] _cameras;
