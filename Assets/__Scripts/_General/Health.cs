@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     public float maxHealth = 100;
     public bool isAlive;
+    public GameObject healthDrop;
     private Slider _scorebar;
     private float _health;
     private Slider _healthbar;
@@ -43,12 +44,19 @@ public class Health : MonoBehaviour
         {
             if (gameObject.CompareTag("Enemy"))
             {
+                int dropHealth = Random.Range(0, 20);
                 _score += gameObject.GetComponent<BasicEnemy>().score;
                 _scorebar.value = _score;
 
                 if (gameObject.GetComponent<DropBomb>() != null)
                 {
                     gameObject.GetComponent<DropBomb>().EnemyDropBomb();
+                }
+
+                if (dropHealth == 0)
+                {
+                    GameObject pickup = Instantiate(healthDrop);
+                    pickup.transform.position = transform.position;
                 }
             }
 
