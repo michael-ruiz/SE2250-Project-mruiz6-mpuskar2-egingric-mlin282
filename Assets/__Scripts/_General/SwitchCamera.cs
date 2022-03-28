@@ -33,6 +33,8 @@ public class SwitchCamera : MonoBehaviour
         _visitedRooms.Add(_cameras[12]);
         _visitedRooms.Add(_cameras[13]);
         _visitedRooms.Add(_cameras[20]);
+        _visitedRooms.Add(_cameras[25]);
+        _visitedRooms.Add(_cameras[26]);
 
         activeCamera.SetActive(true);
     }
