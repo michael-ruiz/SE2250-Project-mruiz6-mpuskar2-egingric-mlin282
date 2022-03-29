@@ -31,7 +31,14 @@ public class InstantiateEnemies : MonoBehaviour
 
         if (MainMenu.currentLvl == 2)
         {
-            // different locations for lvl 2
+            _posInRoom = new Vector3[3];
+            _posInRoom[0] = new Vector3(1.6f, 2, 0);
+            _posInRoom[1] = new Vector3(-1.6f, 2, 0);
+            _posInRoom[2] = new Vector3(0, -2, 0);
+
+            enemy1 = enemy1Prefab;
+            enemy2 = enemy2Prefab;
+            enemy3 = enemy3Prefab;
         }
     }
 
