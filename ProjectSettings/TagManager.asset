@@ -13,6 +13,8 @@ TagManager:
   - SpeedPickup
   - DamagePickup
   - UI
+  - CollectableCounter
+  - Collectable
   layers:
   - Default
   - TransparentFX

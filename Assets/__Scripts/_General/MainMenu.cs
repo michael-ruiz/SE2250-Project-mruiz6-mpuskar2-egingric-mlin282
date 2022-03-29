@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     public static bool character3;
     public static bool character2;
     public static bool character1;
-    public static int currentLvl = 2;
+    public static int currentLvl = 0;
 
     // Main Menu buttons
     public Button shurikenButton;

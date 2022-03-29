@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Collectable : MonoBehaviour
 {
@@ -11,11 +12,13 @@ public class Collectable : MonoBehaviour
     public int healthIncrease = 20;
     // How much to increase the player's damage by if it is a damage pickup
     public int damageMultiple = 2;
+    private static Slider _counter;
 
     // Start is called before the first frame update
     void Start()
     {
         objCounter = 0;
+        _counter = GameObject.FindGameObjectWithTag("CollectableCounter").GetComponent<Slider>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -24,9 +27,13 @@ public class Collectable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            objCounter++;
 
-            if (gameObject.CompareTag("SpeedPickup"))
+            if (gameObject.CompareTag("Collectable"))
+            {
+                objCounter++;
+                _counter.value = objCounter;
+            }
+            else if (gameObject.CompareTag("SpeedPickup"))
             {
                 PlayerMovement.speedMultiplier = speedMultiplier;
             }
