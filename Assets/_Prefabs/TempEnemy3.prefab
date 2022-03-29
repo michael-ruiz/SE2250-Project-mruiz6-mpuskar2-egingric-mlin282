@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   isAlive: 0
+  healthDrop: {fileID: 9126325516841483109, guid: 280349993b9ef204dbb0a8923276f2bc, type: 3}
 --- !u!114 &5463277305969435084
 MonoBehaviour:
   m_ObjectHideFlags: 0
