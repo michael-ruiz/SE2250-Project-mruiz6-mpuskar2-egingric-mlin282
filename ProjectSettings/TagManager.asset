@@ -15,6 +15,7 @@ TagManager:
   - UI
   - CollectableCounter
   - Collectable
+  - Colour
   layers:
   - Default
   - TransparentFX
