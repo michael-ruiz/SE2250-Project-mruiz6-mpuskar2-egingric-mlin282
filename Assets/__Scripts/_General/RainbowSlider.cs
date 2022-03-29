@@ -7,6 +7,7 @@ public class RainbowSlider : MonoBehaviour
 {
     private static bool _isRainbow;
     private Image _sliderColour;
+    private float _timer = 0.5f; // Change colour every 0.5 seconds
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +23,12 @@ public class RainbowSlider : MonoBehaviour
         {
             _isRainbow = true;
         }
-        if (_isRainbow)
+        if (_isRainbow && _timer < 0)
         {
             Color rainbow = new Color(Random.value, Random.value, Random.value);
             _sliderColour.color = rainbow;
+            _timer = 0.5f;
         }
+        _timer -= Time.smoothDeltaTime;
     }
 }
