@@ -18,7 +18,7 @@ public class DeathMenu : MonoBehaviour
         SceneManager.LoadScene("Level1");
     }
 
-    public void MainMenu()
+    public void CharacterSelect()
     {
         SceneManager.LoadScene("CharacterSelect");
     }

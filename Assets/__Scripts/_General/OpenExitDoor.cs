@@ -9,8 +9,9 @@ public class OpenExitDoor : MonoBehaviour
         // Add logic for when enemies are dead
         if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<Collider2D>().isTrigger = true;
-            print("Done");
+            MainMenu.currentLvl = 2;
+            Destroy(collision.gameObject);
+            NextLevelMenu.OpenMenu();
         }
     }
 }

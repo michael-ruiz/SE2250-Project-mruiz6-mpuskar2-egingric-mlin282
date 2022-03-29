@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     public static bool character3;
     public static bool character2;
     public static bool character1;
-    public static int currentLvl;
+    public static int currentLvl = 0;
 
     // Main Menu buttons
     public Button shurikenButton;
@@ -107,7 +107,17 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Level1");
-        currentLvl = 1;
+        if (currentLvl == 0)
+        {
+            currentLvl = 1;
+        }
+        if (currentLvl == 1)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        if (currentLvl == 2)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
 }
