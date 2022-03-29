@@ -15,7 +15,15 @@ public class DeathMenu : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("Level1");
+        if (MainMenu.currentLvl == 1)
+        {
+            SceneManager.LoadScene("Level1");
+        }
+        if (MainMenu.currentLvl == 2)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+
     }
 
     public void CharacterSelect()
