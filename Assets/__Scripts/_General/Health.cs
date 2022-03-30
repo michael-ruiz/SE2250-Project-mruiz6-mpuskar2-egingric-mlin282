@@ -73,13 +73,26 @@ public class Health : MonoBehaviour
     // Increase or decrease health by a given value
     public void UpdateHealth(float change)
     {
-        _health += change;
+        if (GetComponent<Char1Movement>() == null)
+        {
+            _health += change;
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.E)) // If it's character 1 and they are holding E, half damage taken
+            {
+                _health += (change * 0.5f);
+            }
+            else
+            {
+                _health += change;
+            }
+        }
 
         if (_health > maxHealth)
         {
             _health = maxHealth;
         }
-
         else if (_health <= 0)
         {
             _health = 0;
