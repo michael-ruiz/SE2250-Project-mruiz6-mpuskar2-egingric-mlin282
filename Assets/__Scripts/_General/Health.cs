@@ -13,6 +13,11 @@ public class Health : MonoBehaviour
     private Slider _healthbar;
     private static float _score = 0;
 
+    // Regen variables
+    private float _timeSinceLastHit = 0;
+    private float _regenTimer = 5;
+    private float _regenQuanity = 5;
+
     // Set player starting health
     void Awake()
     {
@@ -68,11 +73,15 @@ public class Health : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        Regen();
     }
 
     // Increase or decrease health by a given value
     public void UpdateHealth(float change)
     {
+        _timeSinceLastHit = 0;
+
         if (GetComponent<Char1Movement>() == null)
         {
             _health += change;
@@ -102,6 +111,21 @@ public class Health : MonoBehaviour
         if (_healthbar != null)
         {
             _healthbar.value = _health;
+        }
+    }
+
+    private void Regen()
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            if (_timeSinceLastHit > _regenTimer)
+            {
+                UpdateHealth(_regenQuanity);
+            }
+            else
+            {
+                _timeSinceLastHit += Time.deltaTime;
+            }
         }
     }
 }

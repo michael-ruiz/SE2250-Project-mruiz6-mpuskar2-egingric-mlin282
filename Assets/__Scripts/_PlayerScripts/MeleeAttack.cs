@@ -30,9 +30,8 @@ public class MeleeAttack : MonoBehaviour
                 {
                     enemiesToDmg[i].GetComponent<Health>().UpdateHealth(-damage);
                 }
-
+                timeBtwnAttack = startTimeBtwnAttack;
             }
-            timeBtwnAttack = startTimeBtwnAttack;
         }
         else
         {
