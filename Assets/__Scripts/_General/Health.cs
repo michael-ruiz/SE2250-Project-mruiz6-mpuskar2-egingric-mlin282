@@ -11,7 +11,8 @@ public class Health : MonoBehaviour
     private Slider _scorebar;
     private float _health;
     private Slider _healthbar;
-    private static float _score = 0;
+    public static float score = 0;
+    public static float maxScore = 200;
 
     // Regen variables
     private float _timeSinceLastHit = 0;
@@ -50,8 +51,8 @@ public class Health : MonoBehaviour
             if (gameObject.CompareTag("Enemy"))
             {
                 int dropHealth = Random.Range(0, 20);
-                _score += gameObject.GetComponent<BasicEnemy>().score;
-                _scorebar.value = _score;
+                score += gameObject.GetComponent<BasicEnemy>().score;
+                _scorebar.value = score;
 
                 if (gameObject.GetComponent<DropBomb>() != null)
                 {
@@ -68,7 +69,7 @@ public class Health : MonoBehaviour
             if (gameObject.CompareTag("Player"))
             {
                 DeathMenu.OpenDeathMenu();
-                _score = 0;
+                score = 0;
             }
 
             Destroy(gameObject);
