@@ -21,14 +21,16 @@ public class OpenExitDoor : MonoBehaviour
         if (_enemies.Length == 0 || _enemies == null)
         {
             _allEnemiesGone = true;
-            _exitDoor.offset = new Vector2(_exitDoor.offset.x, _exitDoor.offset.y + 1.5f);
+            _exitDoor.offset = new Vector2(_exitDoor.offset.x, 59.5f);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        print("in collision");
         if (collision.gameObject.CompareTag("Player") && _allEnemiesGone)
         {
+            print("Here");
             MainMenu.currentLvl = 2;
             Destroy(collision.gameObject);
             NextLevelMenu.OpenMenu();
