@@ -7,29 +7,26 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     // Variables to disable or enable certain player attributes
-    // Character 3
-    public static bool bomb;
-    public static bool shuriken = true;
-    // Character 2
-    public static bool knife;
-    public static bool bowC2 = true;
-    // Character 1
-    public static bool bowC1;
-    public static bool sword = true;
-
-    // Variables to select the character
-    public static bool character3;
-    public static bool character2;
-    public static bool character1;
     public static int currentLvl = 0;
 
-    // Main Menu buttons
+    // Character 3
+    public static bool character3;
+    public static bool bomb;
+    public static bool shuriken = true;
     public Button shurikenButton;
     public Button bombButton;
 
+    // Character 2
+    public static bool character2;
+    public static bool knife;
+    public static bool bowC2 = true;
     public Button knifeButton;
     public Button bowButtonC2;
 
+    // Character 1
+    public static bool character1;
+    public static bool bowC1;
+    public static bool sword = true;
     public Button swordButton;
     public Button bowButtonC1;
 
