@@ -171,12 +171,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   damage: 15
-  maxRadius: 20
+  maxRadius: 15
   minRadius: 6
   score: 20
   attackSpeed: 1
   rangeProjectile: {fileID: 3292813943776123982, guid: 44357e868d8ad4aecbbdd190974c7dd5, type: 3}
-  projSpeed: 25
+  projSpeed: 15
 --- !u!114 &5463277305969435086
 MonoBehaviour:
   m_ObjectHideFlags: 0

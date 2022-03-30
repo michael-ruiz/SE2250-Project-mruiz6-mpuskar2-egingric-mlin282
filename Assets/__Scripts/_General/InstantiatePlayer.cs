@@ -30,12 +30,14 @@ public class InstantiatePlayer : MonoBehaviour
             {
                 char2.GetComponent<MeleeAttack>().startTimeBtwnAttack *= 0.5f;
             }
-            char2.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bow;
+            char2.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bowC2;
             vaultWallTemp.isTrigger = false;
         }
         else if (MainMenu.character1)
         {
-            //GameObject char1 = Instantiate(character1);
+            GameObject char1 = Instantiate(character1);
+            char1.GetComponent<MeleeAttack>().enabled = MainMenu.sword;
+            char1.GetComponent<PlayerRangedAttack>().enabled = MainMenu.bowC1;
             vaultWallTemp.isTrigger = false;
         }
     }

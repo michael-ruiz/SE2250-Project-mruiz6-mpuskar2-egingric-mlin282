@@ -12,7 +12,10 @@ public class MainMenu : MonoBehaviour
     public static bool shuriken = true;
     // Character 2
     public static bool knife;
-    public static bool bow = true;
+    public static bool bowC2 = true;
+    // Character 1
+    public static bool bowC1;
+    public static bool sword = true;
 
     // Variables to select the character
     public static bool character3;
@@ -27,12 +30,17 @@ public class MainMenu : MonoBehaviour
     public Button knifeButton;
     public Button bowButtonC2;
 
+    public Button swordButton;
+    public Button bowButtonC1;
+
     void Start()
     {
         shurikenButton.interactable = false;
         bombButton.interactable = false;
         knifeButton.interactable = false;
         bowButtonC2.interactable = false;
+        swordButton.interactable = false;
+        bowButtonC1.interactable = false;
     }
 
     public void Character3Select()
@@ -48,6 +56,8 @@ public class MainMenu : MonoBehaviour
 
         // Character 1
         character1 = false;
+        swordButton.interactable = false;
+        bowButtonC1.interactable = false;
     }
 
     public void Character2Select()
@@ -63,11 +73,15 @@ public class MainMenu : MonoBehaviour
 
         // Character 1
         character1 = false;
+        swordButton.interactable = false;
+        bowButtonC1.interactable = false;
     }
 
     public void Character1Select()
     {
         character1 = true;
+        swordButton.interactable = true;
+        bowButtonC1.interactable = true;
 
         // Character 3
         character3 = false;
@@ -96,13 +110,25 @@ public class MainMenu : MonoBehaviour
     public void KnifeSelect()
     {
         knife = true;
-        bow = false;
+        bowC2 = false;
     }
 
-    public void BowSelect()
+    public void BowSelectC2()
     {
         knife = false;
-        bow = true;
+        bowC2 = true;
+    }
+
+    public void SwordSelect()
+    {
+        sword = true;
+        bowC1 = false;
+    }
+
+    public void BowSelectC1()
+    {
+        sword = false;
+        bowC1 = true;
     }
 
     public void PlayGame()

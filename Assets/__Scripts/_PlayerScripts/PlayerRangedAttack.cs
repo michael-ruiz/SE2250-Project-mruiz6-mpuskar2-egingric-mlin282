@@ -37,7 +37,7 @@ public class PlayerRangedAttack : MonoBehaviour
         projGO.GetComponent<Projectile>().fromWhere = gameObject;
         _rb.velocity = projDir * projSpeed;
 
-        if (MainMenu.bow)
+        if (MainMenu.bowC2 || MainMenu.bowC1)
         {
             // Angle the projectile to be in the correct direction
             float angle = -Mathf.Atan2(projDir.x, projDir.y) * Mathf.Rad2Deg;

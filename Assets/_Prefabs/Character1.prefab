@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rangeProjectile: {fileID: 3292813943776123982, guid: 44357e868d8ad4aecbbdd190974c7dd5, type: 3}
-  projSpeed: 15
+  projSpeed: 20
 --- !u!114 &3624860089467548295
 MonoBehaviour:
   m_ObjectHideFlags: 0
