@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Collectable : MonoBehaviour
 {
-    public static int objCounter = 0;
+    public static int objCounter;
+    public static int totalCollectables = 10;
     // How much to mutiply the player's speed by if it is a speed pickup
     public float speedMultiplier = 1.5f;
     // How much to increase the player's health by if it is a health pickup

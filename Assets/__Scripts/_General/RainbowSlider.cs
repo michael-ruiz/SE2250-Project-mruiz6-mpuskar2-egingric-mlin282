@@ -19,7 +19,7 @@ public class RainbowSlider : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Collectable.objCounter == 5)
+        if (Collectable.objCounter >= (Collectable.totalCollectables / 2))
         {
             _isRainbow = true;
         }
