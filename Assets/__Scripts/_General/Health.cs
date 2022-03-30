@@ -89,9 +89,9 @@ public class Health : MonoBehaviour
         }
         else
         {
-            if (Input.GetKey(KeyCode.E)) // If it's character 1 and they are holding E, half damage taken
+            if (Input.GetKey(KeyCode.E)) // If it's character 1 and they are holding E, reduce damage taken
             {
-                _health += (change * 0.5f);
+                _health += (change * 0.25f);
             }
             else
             {

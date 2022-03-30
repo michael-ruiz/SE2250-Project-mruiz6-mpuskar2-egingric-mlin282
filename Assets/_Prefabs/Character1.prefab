@@ -197,12 +197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1ac8bf37968534abe38f0690bc3835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwnAttack: 0.3
+  startTimeBtwnAttack: 0.6
   attackPos: {fileID: 3624860089996960729}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 128
-  attackRange: 2
+  attackRange: 1.7
   baseDamage: 40
   damage: 40
 --- !u!114 &3624860089467548294
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f018e7a74f4cf34c8529cdbfd3539fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
 --- !u!1 &3624860089996960728
 GameObject:
   m_ObjectHideFlags: 0
