@@ -27,10 +27,8 @@ public class OpenExitDoor : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("in collision");
         if (collision.gameObject.CompareTag("Player") && _allEnemiesGone)
         {
-            print("Here");
             MainMenu.currentLvl = 2;
             Destroy(collision.gameObject);
             NextLevelMenu.OpenMenu();
