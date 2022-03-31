@@ -6,7 +6,6 @@ public class OpenExitDoor : MonoBehaviour
 {
     private bool _allEnemiesGone = false;
     private Collider2D _exitDoor;
-    private GameObject[] _enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +16,16 @@ public class OpenExitDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (_enemies.Length == 0 || _enemies == null)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             _allEnemiesGone = true;
             _exitDoor.offset = new Vector2(_exitDoor.offset.x, 59.5f);
+        }
+
+        else
+        {
+            _allEnemiesGone = false;
+            _exitDoor.offset = new Vector2(_exitDoor.offset.x, 58);
         }
     }
 
