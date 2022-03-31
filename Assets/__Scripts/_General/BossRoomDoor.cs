@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossRoomDoor : MonoBehaviour
 {
     private GameObject _notReadyMenu;
+    private bool isScoreUnlockBossRoom = false;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,12 @@ public class BossRoomDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health.score == Health.maxScore || Collectable.objCounter >= (Collectable.totalCollectables / 2))
+        if (Health.score == Health.maxScore)
+        {
+            isScoreUnlockBossRoom = true;
+        }
+
+        if (isScoreUnlockBossRoom || Collectable.objCounter >= (Collectable.totalCollectables / 2))
         {
             GetComponent<Collider2D>().isTrigger = true;
         }

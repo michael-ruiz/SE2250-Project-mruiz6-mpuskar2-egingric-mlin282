@@ -47,6 +47,12 @@ public class Collectable : MonoBehaviour
                 collision.GetComponent<MeleeAttack>().damage *= damageMultiple;
                 Projectile.damageMultiplier = damageMultiple;
                 Bomb.damageMultiplier = damageMultiple;
+
+                // Reset character 1 damage if he has the bow (reset method in MeleeAttack is inaccesible)
+                if (collision.gameObject.GetComponent<Char1Movement>() != null && !collision.gameObject.GetComponent<MeleeAttack>().enabled)
+                {
+                    collision.gameObject.GetComponent<PlayerRangedAttack>().ResetChar1Damage();
+                }
             }
         }
     }

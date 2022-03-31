@@ -44,4 +44,18 @@ public class PlayerRangedAttack : MonoBehaviour
             _rb.rotation = angle;
         }
     }
+
+    public void ResetChar1Damage()
+    {
+        // Reset all player done damage values after 10 seconds
+        StartCoroutine(ResetDamageDelay(10));
+    }
+
+    IEnumerator ResetDamageDelay(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        // Code to execute after the delay
+        Projectile.damageMultiplier = 1;
+    }
 }

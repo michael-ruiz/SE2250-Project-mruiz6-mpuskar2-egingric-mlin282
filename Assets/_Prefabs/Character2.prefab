@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6199715169105111956}
   - component: {fileID: -3780836323896481573}
   - component: {fileID: -2461464294150267130}
+  - component: {fileID: 4882585334859816118}
   m_Layer: 0
   m_Name: Character2
   m_TagString: Player
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 406aaf2eb74c45f4595f7aa227dca25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeProjectile: {fileID: 3292813943776123982, guid: 44357e868d8ad4aecbbdd190974c7dd5, type: 3}
+  rangeProjectile: {fileID: 7658069928050958850, guid: 0c3b38d338146b746be653d1caf69a2b, type: 3}
   projSpeed: 25
 --- !u!114 &6199715169105111956
 MonoBehaviour:
@@ -229,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  defaultSpeed: 0
 --- !u!114 &-2461464294150267130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,5 +241,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eaf5394a19300e24986147aad3833ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4882585334859816118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6199715169105111962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a381c2d88beb2a64e8ea33f852500900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

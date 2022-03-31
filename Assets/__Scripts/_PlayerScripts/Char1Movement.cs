@@ -26,11 +26,11 @@ public class Char1Movement : PlayerMovement
 
         if (Input.GetKey(KeyCode.E))
         {
-            speed = 2;
+            speed = defaultSpeed / 2;
         }
         else
         {
-            speed = 4;
+            speed = defaultSpeed;
         }
 
         // Check if the multiplier is greater than 1, and if it is reset it after 5 seconds

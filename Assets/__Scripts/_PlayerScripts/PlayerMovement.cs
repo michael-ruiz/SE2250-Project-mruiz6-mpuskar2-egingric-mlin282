@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5;
+    public float defaultSpeed;
     public static float speedMultiplier = 1;
     protected Rigidbody2D rb;
     protected Animator animator;
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     // Get animator and rigidbody for every player
     void Awake()
     {
+        defaultSpeed = speed;
+
         rb = GetComponent<Rigidbody2D>();
         speedMultiplier = 1;
         if (GetComponent<Animator>() != null)
@@ -76,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         // Code to execute after the delay
-        speed = 5;
+        speed = defaultSpeed;
     }
 
     protected IEnumerator ResetMultiplierDelay(float time)

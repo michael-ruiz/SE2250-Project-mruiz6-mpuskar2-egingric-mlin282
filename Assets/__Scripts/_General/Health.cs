@@ -70,6 +70,11 @@ public class Health : MonoBehaviour
             {
                 DeathMenu.OpenDeathMenu();
                 score = 0;
+
+                // Reset damage multipliers on death
+                gameObject.GetComponent<MeleeAttack>().damage = gameObject.GetComponent<MeleeAttack>().baseDamage;
+                Projectile.damageMultiplier = 1;
+                Bomb.damageMultiplier = 1;
             }
 
             Destroy(gameObject);
@@ -128,5 +133,11 @@ public class Health : MonoBehaviour
                 _timeSinceLastHit += Time.deltaTime;
             }
         }
+    }
+
+    public void IncreaseMaxHealth()
+    {
+        maxHealth *= 1.2f;
+        _healthbar.maxValue *= 1.2f;
     }
 }
