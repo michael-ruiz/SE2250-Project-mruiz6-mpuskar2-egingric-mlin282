@@ -15,32 +15,41 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
         speedMultiplier = 1;
+        if (GetComponent<Animator>() != null)
+        {
+            animator = GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
    void Update()
-{
-
-    movement.x = Input.GetAxisRaw("Horizontal");
-    movement.y = Input.GetAxisRaw("Vertical");
-
-    if (movement != Vector2.zero)
     {
-         animator.SetFloat("LastHorizontal", movement.x);
-         animator.SetFloat("LastVertical", movement.y);
-     }
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-     animator.SetFloat("Speed", movement.sqrMagnitude);
-}
+        if (movement != Vector2.zero && animator != null)
+        {
+            animator.SetFloat("LastHorizontal", movement.x);
+            animator.SetFloat("LastVertical", movement.y);
+        }
+
+        if (animator != null)
+        {
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+    }
 
     // Updated every fixed amount of frames
     void FixedUpdate()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        if (animator != null)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+        
 
         if (Input.GetKey(KeyCode.Space))
         {

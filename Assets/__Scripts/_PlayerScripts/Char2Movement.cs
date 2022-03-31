@@ -7,9 +7,12 @@ public class Char2Movement : PlayerMovement
     // Updated every fixed amount of frames
     void FixedUpdate()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        if (animator != null)
+        {
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
 
         if (Input.GetKey(KeyCode.Space))
         {

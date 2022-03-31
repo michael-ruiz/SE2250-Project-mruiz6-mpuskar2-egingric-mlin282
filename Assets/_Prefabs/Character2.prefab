@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 6199715169105112172}
   - component: {fileID: 6199715169105112173}
   - component: {fileID: 6199715169105111954}
-  - component: {fileID: 6199715169105111955}
   - component: {fileID: 6199715169105111952}
   - component: {fileID: 6199715169105111958}
   - component: {fileID: 6199715169105111959}
@@ -142,25 +141,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &6199715169105111955
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6199715169105111962}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &6199715169105111952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -201,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   isAlive: 0
+  healthDrop: {fileID: 0}
 --- !u!114 &6199715169105111959
 MonoBehaviour:
   m_ObjectHideFlags: 0
