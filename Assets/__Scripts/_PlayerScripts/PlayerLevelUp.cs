@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerLevelUp : MonoBehaviour
 {
     private Slider _scorebar;
-    private Slider _healthbar;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +16,11 @@ public class PlayerLevelUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Health.score == Health.maxScore)
+        if (Health.score >= Health.maxScore)
         {
-            Health.score = 0;
-            _scorebar.value = 0;
+            // Reset bar and allow excess score to carry over
+            Health.score %= Health.maxScore;
+            _scorebar.value %= Health.maxScore;
 
             if (GetComponent<Char1Movement>() != null)
             {
