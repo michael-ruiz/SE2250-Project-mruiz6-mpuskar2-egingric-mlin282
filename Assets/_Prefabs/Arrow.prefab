@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f1f3b56168aaf49b7f4209e5cbfefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 8
   timeToDelete: 0.7
   fromWhere: {fileID: 0}
 --- !u!50 &-603537035274065457
