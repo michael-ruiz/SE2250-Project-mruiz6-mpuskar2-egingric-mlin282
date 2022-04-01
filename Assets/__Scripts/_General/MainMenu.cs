@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     // Variables to disable or enable certain player attributes
     public static int currentLvl = 0;
+    public Button confirmSelection;
 
     // Character 3
     public static bool character3;
@@ -38,6 +39,7 @@ public class MainMenu : MonoBehaviour
         bowButtonC2.interactable = false;
         swordButton.interactable = false;
         bowButtonC1.interactable = false;
+        confirmSelection.interactable = false;
     }
 
     public void Character3Select()
@@ -45,6 +47,7 @@ public class MainMenu : MonoBehaviour
         character3 = true;
         shurikenButton.interactable = true;
         bombButton.interactable = true;
+        confirmSelection.interactable = true;
 
         // Character 2
         character2 = false;
@@ -62,6 +65,7 @@ public class MainMenu : MonoBehaviour
         character2 = true;
         knifeButton.interactable = true;
         bowButtonC2.interactable = true;
+        confirmSelection.interactable = true;
 
         // Character 3
         character3 = false;
@@ -79,6 +83,7 @@ public class MainMenu : MonoBehaviour
         character1 = true;
         swordButton.interactable = true;
         bowButtonC1.interactable = true;
+        confirmSelection.interactable = true;
 
         // Character 3
         character3 = false;
