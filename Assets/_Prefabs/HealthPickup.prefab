@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 1.5
   healthIncrease: 20
+  damageMultiple: 2
 --- !u!1 &9126325517039093614
 GameObject:
   m_ObjectHideFlags: 0
