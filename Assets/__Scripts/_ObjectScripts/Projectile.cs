@@ -5,13 +5,19 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float damage = 5;
+    public float baseDamage = 5;
     public static float damageMultiplier = 1;
-    public float timeToDelete = 0.5f;
+    public float timeToDelete = 0.7f;
     public GameObject fromWhere;
+
+    private void Start()
+    {
+        damage = baseDamage;
+    }
 
     private void Update()
     {
-        // Destroy the projectile 0.5 seconds after creating it
+        // Destroy the projectile a short time after creating it
         StartCoroutine(ExecuteAfterTime(timeToDelete));
     }
 

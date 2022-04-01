@@ -658,6 +658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 8
+  baseDamage: 8
   timeToDelete: 0.7
   fromWhere: {fileID: 0}
 --- !u!50 &-603537035274065457

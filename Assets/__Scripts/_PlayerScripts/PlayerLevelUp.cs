@@ -22,19 +22,19 @@ public class PlayerLevelUp : MonoBehaviour
             Health.score %= Health.maxScore;
             _scorebar.value %= Health.maxScore;
 
-            if (GetComponent<Char1Movement>() != null)
+            if (GetComponent<Char1Movement>() != null) // Character 1
             {
                 // Update health
                 GetComponent<Health>().IncreaseMaxHealth();
             }
-            else if (GetComponent<Char2Movement>() != null)
+            else if (GetComponent<Char2Movement>() != null) // Character 2
             {
                 // Update damage
-                GetComponent<MeleeAttack>().damage *= 1.05f;
-                GetComponent<MeleeAttack>().baseDamage *= 1.05f;
-                GetComponent<PlayerRangedAttack>().rangeProjectile.GetComponent<Projectile>().damage *= 1.05f;
+                GetComponent<MeleeAttack>().damage *= 1.1f;
+                GetComponent<MeleeAttack>().baseDamage *= 1.1f;
+                GetComponent<PlayerRangedAttack>().rangeProjectile.GetComponent<Projectile>().damage *= 1.1f;
             }
-            else if (GetComponent<PlayerMovement>() != null)
+            else if (GetComponent<PlayerMovement>() != null) // Character 3
             {
                 // Update speed
                 GetComponent<PlayerMovement>().speed *= 1.05f;
