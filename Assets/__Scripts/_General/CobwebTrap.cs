@@ -10,18 +10,22 @@ public class CobwebTrap : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("dfgdf");
             if (collision.GetComponent<PlayerMovement>() != null)
             {
                 collision.GetComponent<PlayerMovement>().speed *= _reduce;
+                Debug.Log("Test");
             }
             else if (collision.GetComponent<Char2Movement>() != null)
             {
                 collision.GetComponent<Char2Movement>().speed *= _reduce;
+                Debug.Log("Test");
             }
             else if (collision.GetComponent<Char1Movement>() != null)
             {
                 // There is currently a bug with character 1 movement not being slowed down
                 collision.GetComponent<Char1Movement>().speed *= _reduce;
+                Debug.Log("Test");
             }
         }
     }

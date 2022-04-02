@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("Speed", movement.sqrMagnitude);
         }
 
-        Dash();
+        UniqueMovement();
 
         // Check if the multiplier is greater than 1, and if it is reset it after 5 seconds
         if (speedMultiplier > 1)
@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + speed * speedMultiplier * Time.fixedDeltaTime * movement.normalized); 
     }
 
-    protected virtual void Dash()
+    protected virtual void UniqueMovement()
     {
         if (Input.GetKey(KeyCode.Space))
         {

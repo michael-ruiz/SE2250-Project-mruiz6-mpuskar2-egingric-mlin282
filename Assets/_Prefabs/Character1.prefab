@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3624860089467548414}
   - component: {fileID: 3624860089467548289}
   - component: {fileID: 3624860089467548288}
-  - component: {fileID: 3624860089467548290}
+  - component: {fileID: 5806238772394346348}
   - component: {fileID: 3624860089467548293}
   - component: {fileID: 3624860089467548292}
   - component: {fileID: 3624860089467548295}
-  - component: {fileID: 3624860089467548294}
+  - component: {fileID: 3455564775993315084}
   - component: {fileID: -1933193301917445610}
   m_Layer: 0
   m_Name: Character1
@@ -111,7 +111,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3624860089467548290
+--- !u!61 &5806238772394346348
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +186,7 @@ MonoBehaviour:
   attackRange: 1.7
   baseDamage: 40
   damage: 40
---- !u!114 &3624860089467548294
+--- !u!114 &3455564775993315084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

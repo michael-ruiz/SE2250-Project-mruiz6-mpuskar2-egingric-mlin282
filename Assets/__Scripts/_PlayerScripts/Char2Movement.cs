@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Char2Movement : PlayerMovement
 {
-    protected override void Dash()
+    protected override void UniqueMovement()
     {
         if (Input.GetKey(KeyCode.Space))
         {
