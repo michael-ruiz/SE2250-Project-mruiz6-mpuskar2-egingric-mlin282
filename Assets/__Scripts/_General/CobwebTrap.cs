@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CobwebTrap : MonoBehaviour
 {
-    private float _reduce = 0.5f;
+    private float _reduce = 0.3f;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
