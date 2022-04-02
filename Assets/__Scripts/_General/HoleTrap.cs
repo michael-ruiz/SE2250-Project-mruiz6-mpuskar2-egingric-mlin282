@@ -11,7 +11,6 @@ public class HoleTrap : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.GetComponent<Health>().UpdateHealth(-_damage);
-            //Destroy(collision.gameObject);
         }
     }
 }

@@ -14,16 +14,6 @@ public class Char1Movement : PlayerMovement
             animator.SetFloat("Speed", movement.sqrMagnitude);
         }
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (3 <= dashCooldown)
-            {
-                speed = 50;
-                dashCooldown = 0;
-                StartCoroutine(base.ExecuteAfterTime(0.1f)); // Delay of 0.1 seconds
-            }
-        }
-
         if (Input.GetKey(KeyCode.E))
         {
             speed = defaultSpeed / 2;
@@ -39,7 +29,6 @@ public class Char1Movement : PlayerMovement
             StartCoroutine(base.ResetMultiplierDelay(5));
         }
 
-        dashCooldown += Time.fixedDeltaTime;
         rb.MovePosition(rb.position + speed * speedMultiplier * Time.fixedDeltaTime * movement.normalized);
     }
 }
