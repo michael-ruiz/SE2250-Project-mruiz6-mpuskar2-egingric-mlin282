@@ -16,6 +16,7 @@ TagManager:
   - CollectableCounter
   - Collectable
   - Colour
+  - LevelUpText
   layers:
   - Default
   - TransparentFX
