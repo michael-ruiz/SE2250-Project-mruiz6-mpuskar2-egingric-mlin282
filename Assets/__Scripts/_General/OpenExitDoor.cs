@@ -19,13 +19,27 @@ public class OpenExitDoor : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             _allEnemiesGone = true;
-            _exitDoor.offset = new Vector2(_exitDoor.offset.x, 59.5f);
+            if (MainMenu.currentLvl == 1)
+            {
+                _exitDoor.offset = new Vector2(_exitDoor.offset.x, 59.5f);
+            }
+            if (MainMenu.currentLvl == 2)
+            {
+                _exitDoor.offset = new Vector2(_exitDoor.offset.x, 97.5f);
+            }
         }
 
         else
         {
             _allEnemiesGone = false;
-            _exitDoor.offset = new Vector2(_exitDoor.offset.x, 58);
+            if (MainMenu.currentLvl == 1)
+            {
+                _exitDoor.offset = new Vector2(_exitDoor.offset.x, 58);
+            }
+            if (MainMenu.currentLvl == 2)
+            {
+                _exitDoor.offset = new Vector2(_exitDoor.offset.x, 96);
+            }
         }
     }
 
