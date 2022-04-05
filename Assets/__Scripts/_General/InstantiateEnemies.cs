@@ -23,6 +23,8 @@ public class InstantiateEnemies : MonoBehaviour
     public static void GenerateRoom(int lvl)
     {
         int range = 0;
+        int start = 0;
+
         if (lvl == 1)
         {
             range = 3;
@@ -37,13 +39,14 @@ public class InstantiateEnemies : MonoBehaviour
         {
             range = 4;
             _posInRoom = new Vector3[3];
-            _posInRoom[0] = new Vector3(1.6f, 2, 0);
-            _posInRoom[1] = new Vector3(-1.6f, 2, 0);
-            _posInRoom[2] = new Vector3(0, -2, 0);
+            _posInRoom[0] = new Vector3(5, 2, 0);
+            _posInRoom[1] = new Vector3(-5, 2, 0);
+            _posInRoom[2] = new Vector3(0, -3, 0);
         }
         if (lvl == 1 && SwitchCamera.activeCamera.Equals(GameObject.Find("CameraEnd")))
         {
-            range = 2;
+            range = 3;
+            start = 1;
             _posInRoom = new Vector3[10];
             _posInRoom[0] = new Vector3(7, 3, 0);
             _posInRoom[1] = new Vector3(-7, 3, 0);
@@ -56,21 +59,33 @@ public class InstantiateEnemies : MonoBehaviour
             _posInRoom[8] = new Vector3(5, -4, 0);
             _posInRoom[9] = new Vector3(-5, -4, 0);
         }
+        if (lvl == 2 && SwitchCamera.activeCamera.Equals(GameObject.Find("CameraEnd")))
+        {
+            range = 4;
+            start = 1;
+            _posInRoom = new Vector3[6];
+            _posInRoom[0] = new Vector3(0, 0, 0);
+            _posInRoom[1] = new Vector3(7, 4, 0);
+            _posInRoom[2] = new Vector3(11, 0, 0);
+            _posInRoom[3] = new Vector3(-11, 0, 0);
+            _posInRoom[4] = new Vector3(-5, 4, 0);
+            _posInRoom[5] = new Vector3(0, 5, 0);
+        }
 
         if (_posInRoom != null)
         {
             for (int i = 0; i < _posInRoom.Length; i++)
             {
-                int objNum = Random.Range(0, range);
+                int objNum = Random.Range(start, range);
                 Vector3 pos = SwitchCamera.activeCamera.transform.position + _posInRoom[i];
 
                 switch (objNum)
                 {
-                    case 0:
+                    case 1:
                         PlaceObject(enemy1, pos);
                         break;
 
-                    case 1:
+                    case 2:
                         PlaceObject(enemy2, pos);
                         break;
 

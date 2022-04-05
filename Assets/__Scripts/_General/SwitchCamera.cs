@@ -29,6 +29,7 @@ public class SwitchCamera : MonoBehaviour
             activeCamera = _cameras[0];
         }
 
+        _visitedRooms.Clear();
         _visitedRooms.Add(activeCamera);
         if (MainMenu.currentLvl == 1)
         {
@@ -39,7 +40,14 @@ public class SwitchCamera : MonoBehaviour
         }
         if (MainMenu.currentLvl == 2)
         {
-            // add rooms where enemies wont spawn
+            _visitedRooms.Add(_cameras[10]);
+            _visitedRooms.Add(_cameras[11]);
+            _visitedRooms.Add(_cameras[12]);
+            _visitedRooms.Add(_cameras[13]);
+            _visitedRooms.Add(_cameras[17]);
+            _visitedRooms.Add(_cameras[18]);
+            _visitedRooms.Add(_cameras[19]);
+            _visitedRooms.Add(_cameras[29]);
         }
 
         activeCamera.SetActive(true);
